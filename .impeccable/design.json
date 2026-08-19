@@ -1,0 +1,289 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-18T00:00:00Z",
+  "title": "Design System: Nick Davies — Personal Trainer, Exeter",
+  "extensions": {
+    "colorMeta": {
+      "petrol": {
+        "role": "primary",
+        "displayName": "Petrol",
+        "canonical": "#0E4553",
+        "tonalRamp": ["#04171C", "#072B34", "#0E4553", "#135E72", "#1A7891", "#4B9FB4", "#8CC3D1", "#CDE4EA"]
+      },
+      "signal": {
+        "role": "primary",
+        "displayName": "Signal Yellow",
+        "canonical": "#FFC400",
+        "tonalRamp": ["#3D2F00", "#5C4700", "#7A5E00", "#997600", "#C29700", "#FFC400", "#FFD447", "#FFE9A3"]
+      },
+      "signal-lift": {
+        "role": "primary",
+        "displayName": "Signal Lift",
+        "canonical": "#FFD447",
+        "tonalRamp": ["#3D2F00", "#5C4700", "#7A5E00", "#997600", "#C29700", "#FFC400", "#FFD447", "#FFE9A3"]
+      },
+      "sage": {
+        "role": "secondary",
+        "displayName": "Sage (unfinished-content marker)",
+        "canonical": "#4C8B7C",
+        "tonalRamp": ["#0F1D1A", "#1E3A34", "#2D574E", "#3C7468", "#4C8B7C", "#74A99D", "#A2C7BE", "#D0E3DF"]
+      },
+      "stock": {
+        "role": "neutral",
+        "displayName": "Leaflet Stock",
+        "canonical": "#F6F5F1",
+        "tonalRamp": ["#1B1A17", "#35332E", "#514E47", "#6E6A61", "#8F8B81", "#B4B0A6", "#D8D5CD", "#F6F5F1"]
+      },
+      "stock-warm": {
+        "role": "neutral",
+        "displayName": "Warm Stock",
+        "canonical": "#EDEBE3",
+        "tonalRamp": ["#191814", "#322F28", "#4B473C", "#656051", "#8A8574", "#B6B2A3", "#D4D1C5", "#EDEBE3"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#14120F",
+        "tonalRamp": ["#14120F", "#2A2620", "#413B32", "#5A5245", "#756B5B", "#948A78", "#B8AF9E", "#DED8CB"]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "#3E5257",
+        "tonalRamp": ["#0D1214", "#1A2426", "#273639", "#34484C", "#3E5257", "#6B8288", "#9EB2B6", "#D0DADC"]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule Grey",
+        "canonical": "#C9C6BB",
+        "tonalRamp": ["#1F1E1B", "#3D3B36", "#5C5951", "#7A776C", "#999588", "#C9C6BB", "#DEDCD5", "#F0EFEB"]
+      },
+      "reversed": {
+        "role": "neutral",
+        "displayName": "Reversed White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": ["#0E4553", "#33646F", "#6E9AA1", "#7FA6AC", "#A8C4C7", "#BFD4D6", "#C3D6D8", "#EDF4F4"]
+      },
+      "reversed-lead": {
+        "role": "neutral",
+        "displayName": "Panel Lead",
+        "canonical": "#EDF4F4",
+        "tonalRamp": ["#0E4553", "#33646F", "#6E9AA1", "#7FA6AC", "#A8C4C7", "#BFD4D6", "#C3D6D8", "#EDF4F4"]
+      },
+      "reversed-quiet": {
+        "role": "neutral",
+        "displayName": "Panel Quiet",
+        "canonical": "#C3D6D8",
+        "tonalRamp": ["#0E4553", "#33646F", "#6E9AA1", "#7FA6AC", "#A8C4C7", "#BFD4D6", "#C3D6D8", "#EDF4F4"]
+      },
+      "reversed-label": {
+        "role": "neutral",
+        "displayName": "Panel Label",
+        "canonical": "#BFD4D6",
+        "tonalRamp": ["#0E4553", "#33646F", "#6E9AA1", "#7FA6AC", "#A8C4C7", "#BFD4D6", "#C3D6D8", "#EDF4F4"]
+      },
+      "reversed-rule": {
+        "role": "neutral",
+        "displayName": "Panel Rule",
+        "canonical": "#6E9AA1",
+        "tonalRamp": ["#0E4553", "#33646F", "#6E9AA1", "#7FA6AC", "#A8C4C7", "#BFD4D6", "#C3D6D8", "#EDF4F4"]
+      },
+      "foot-text": {
+        "role": "neutral",
+        "displayName": "Footer Text",
+        "canonical": "#C8C6C0",
+        "tonalRamp": ["#14120F", "#2A2620", "#413B32", "#5A5245", "#756B5B", "#948A78", "#C8C6C0", "#E4E2DD"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The single h1 — the visitor's own question, reversed out of the opening petrol panel. Archivo at width 118, capped at 15ch." },
+      "headline-panel": { "displayName": "Headline (panel)", "purpose": "Section headings on petrol grounds. Archivo at width 116, capped at 16ch." },
+      "headline": { "displayName": "Headline (sheet)", "purpose": "Section headings on stock grounds. Archivo at the default width 112, capped at 18ch." },
+      "title": { "displayName": "Title", "purpose": "Tick-row headings. Archivo at width 104 — near-normal, because these read as sentences rather than signage." },
+      "quote": { "displayName": "Quote", "purpose": "Testimonial voice. Archivo 500 at width 100, the only place the display face is set light enough to read as speech. Max 52ch." },
+      "action": { "displayName": "Action", "purpose": "The two action links. Archivo 700 at width 108, so the button reads as part of the notice rather than as UI chrome." },
+      "lead": { "displayName": "Lead", "purpose": "The one-paragraph answer under a panel heading. Max 46ch." },
+      "body": { "displayName": "Body", "purpose": "All prose. Measure 68ch; tick-row prose tightens to 58ch, panel notes to 44ch." },
+      "note": { "displayName": "Note", "purpose": "Nav links, placeholder text, figure captions, footer." },
+      "label": { "displayName": "Label", "purpose": "Tracked uppercase small caps at three settings: 0.08em wordmark role, 0.10em contact terms and citations, 0.12em index labels." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The only easing on the page. Exponential ease-out: movement carries weight into its stop and settles rather than snapping or bouncing." },
+      { "name": "duration-nav", "value": "160ms", "purpose": "Nav underline channel filling on hover and on scroll-spy current state." },
+      { "name": "duration-ground", "value": "180ms", "purpose": "Outbound-link background fill on hover." },
+      { "name": "duration-action", "value": "220ms", "purpose": "Action lift and colour change; outbound arrow travel." },
+      { "name": "duration-stamp", "value": "520ms", "purpose": "Tick stroke-dashoffset draw, 26 to 0." },
+      { "name": "stagger-stamp", "value": "90ms", "purpose": "Per-row delay across the tick list as it enters view." }
+    ],
+    "breakpoints": [
+      { "name": "law-collapse", "value": "860px" },
+      { "name": "narrow", "value": "640px" }
+    ],
+    "gridUnits": [
+      { "name": "unit", "value": "8px", "purpose": "The one modular unit. All spacing is calc(var(--unit) * n)." },
+      { "name": "measure", "value": "68ch", "purpose": "Default prose measure." },
+      { "name": "shell", "value": "1180px", "purpose": "Centred container max-width, 24px inline padding." },
+      { "name": "index-column", "value": "15rem", "purpose": "Margin index column width in the layout law." },
+      { "name": "mark-grid", "value": "48", "purpose": "Isotype viewBox unit. Marks render only at 48px and 24px." }
+    ]
+  },
+  "components": [
+    {
+      "name": "The Action",
+      "kind": "button",
+      "refersTo": "action",
+      "description": "The page's only button and only saturated object. Appears exactly twice; both point at the same WhatsApp link.",
+      "html": "<a class=\"ds-action\" href=\"#\">Message Nick on WhatsApp</a>",
+      "css": ".ds-action { display: inline-block; background: var(--signal, #FFC400); color: var(--ink, #14120F); font-family: \"Archivo\", system-ui, sans-serif; font-variation-settings: \"wdth\" 108; font-weight: 700; font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem); letter-spacing: -0.01em; line-height: 1.6; text-decoration: none; border: none; border-radius: 0; padding: 16px 32px; transition: transform 220ms cubic-bezier(0.16,1,0.3,1), background-color 220ms cubic-bezier(0.16,1,0.3,1); } .ds-action:hover { background: #FFD447; transform: translateY(-2px); } .ds-action:active { transform: translateY(0); } .ds-action:focus-visible { outline: 3px solid var(--ink, #14120F); outline-offset: 3px; }"
+    },
+    {
+      "name": "Notice Panel",
+      "kind": "card",
+      "refersTo": "notice-panel",
+      "description": "Full-bleed petrol field carrying the layout law. Holds a heading, one short lead paragraph and the action. No photograph or illustration ever appears inside one.",
+      "html": "<section class=\"ds-notice\"><div class=\"ds-notice-law\"><div class=\"ds-notice-index\"></div><div><h2 class=\"ds-notice-h\">Not sure the gym is for you?</h2><p class=\"ds-notice-lead\">Neither was I. I'm Nick Davies, a personal trainer in Exeter.</p><p class=\"ds-notice-note\">No pressure either way.</p></div></div></section>",
+      "css": ".ds-notice { background: var(--petrol, #0E4553); color: #fff; padding: 56px 24px; } .ds-notice-law { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: 40px; align-items: start; border-top: 3px solid #6E9AA1; padding-top: 32px; } .ds-notice-index { border-top: none; } .ds-notice-h { font-family: \"Archivo\", system-ui, sans-serif; font-variation-settings: \"wdth\" 116; font-weight: 800; font-size: clamp(2.1rem, 1.3rem + 3.4vw, 3.6rem); line-height: 1.04; letter-spacing: -0.02em; text-wrap: balance; max-width: 16ch; margin: 0; } .ds-notice-lead { margin: 24px 0 0; max-width: 46ch; font-family: \"Public Sans\", system-ui, sans-serif; font-size: clamp(1.3125rem, 1.2rem + 0.5vw, 1.5rem); line-height: 1.6; color: #EDF4F4; } .ds-notice-note { margin: 16px 0 0; max-width: 44ch; font-family: \"Public Sans\", system-ui, sans-serif; font-size: 0.9375rem; line-height: 1.6; color: #C3D6D8; } @media (max-width: 860px) { .ds-notice-law { grid-template-columns: 1fr; gap: 24px; } .ds-notice-index { display: none; } }"
+    },
+    {
+      "name": "Section Sheet",
+      "kind": "card",
+      "refersTo": "sheet",
+      "description": "A light section on leaflet stock. The layout law made visible: a 3px-ruled margin index column carrying a 48px Isotype mark and a tracked label, beside a body column.",
+      "html": "<section class=\"ds-sheet\"><div class=\"ds-law\"><div class=\"ds-law-index\"><svg class=\"ds-mark\" viewBox=\"0 0 48 48\" aria-hidden=\"true\"><path fill-rule=\"evenodd\" d=\"M8 4h23l9 9v31H8zm6 15h20v3H14zm0 7h20v3H14zm0 7h13v3H14z\"/></svg><p class=\"ds-law-label\">My training</p></div><div class=\"ds-law-body\"><h2 class=\"ds-law-h\">What actually happens?</h2><p>Nobody explains this properly, so here it is plainly.</p></div></div></section>",
+      "css": ".ds-sheet { background: var(--stock, #F6F5F1); color: var(--ink, #14120F); padding: 56px 24px; } .ds-law { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: 40px; align-items: start; } .ds-law-index { border-top: 3px solid var(--ink, #14120F); padding-top: 16px; } .ds-mark { display: block; width: 48px; height: 48px; fill: var(--petrol, #0E4553); stroke: none; } .ds-law-label { margin: 12px 0 0; font-family: \"Public Sans\", system-ui, sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-2, #3E5257); } .ds-law-h { font-family: \"Archivo\", system-ui, sans-serif; font-variation-settings: \"wdth\" 112; font-weight: 800; font-size: clamp(1.9rem, 1.25rem + 2.8vw, 3.1rem); line-height: 1.04; letter-spacing: -0.02em; text-wrap: balance; max-width: 18ch; margin: 0 0 24px; } .ds-law-body > p { margin: 0; max-width: 68ch; font-family: \"Public Sans\", system-ui, sans-serif; font-size: clamp(1.0625rem, 0.98rem + 0.38vw, 1.1875rem); line-height: 1.6; color: var(--ink-2, #3E5257); } @media (max-width: 860px) { .ds-law { grid-template-columns: 1fr; gap: 24px; } .ds-law-label { display: none; } .ds-mark { width: 24px; height: 24px; } }"
+    },
+    {
+      "name": "Tick Row",
+      "kind": "custom",
+      "refersTo": "tick",
+      "description": "A row of the tick list — the page's one authored moment. The check is stamped by default in CSS; only a browser that both runs JS and permits motion un-stamps it, so the static reading is never the broken one.",
+      "html": "<ul class=\"ds-ticks\"><li><svg class=\"ds-tick\" viewBox=\"0 0 32 32\" aria-hidden=\"true\"><rect class=\"ds-tick-box\" x=\"2\" y=\"2\" width=\"28\" height=\"28\"/><path class=\"ds-tick-mark\" d=\"M8 16.5l5.5 5.5L24 11\"/></svg><div><h3 class=\"ds-tick-h\">We start with a conversation, not a workout.</h3><p class=\"ds-tick-p\">You come and see the place, we talk about what you want, and you leave.</p></div></li></ul>",
+      "css": ".ds-ticks { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule, #C9C6BB); } .ds-ticks li { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 20px; padding-block: 24px; border-bottom: 1px solid var(--rule, #C9C6BB); } .ds-tick { width: 32px; height: 32px; margin-top: 2px; } .ds-tick-box { fill: none; stroke: var(--petrol, #0E4553); stroke-width: 2.5; } .ds-tick-mark { fill: none; stroke: var(--petrol, #0E4553); stroke-width: 4; stroke-linecap: square; stroke-linejoin: miter; stroke-dasharray: 26; stroke-dashoffset: 0; transition: stroke-dashoffset 520ms cubic-bezier(0.16,1,0.3,1); } .ds-tick-h { font-family: \"Archivo\", system-ui, sans-serif; font-variation-settings: \"wdth\" 104; font-weight: 700; font-size: clamp(1.3125rem, 1.22rem + 0.42vw, 1.5rem); line-height: 1.28; letter-spacing: -0.005em; margin: 0; } .ds-tick-p { margin: 8px 0 0; max-width: 58ch; font-family: \"Public Sans\", system-ui, sans-serif; font-size: clamp(1.0625rem, 0.98rem + 0.38vw, 1.1875rem); line-height: 1.6; color: var(--ink-2, #3E5257); } @media (max-width: 640px) { .ds-ticks li { grid-template-columns: 24px minmax(0, 1fr); gap: 16px; } .ds-tick { width: 24px; height: 24px; } }"
+    },
+    {
+      "name": "Outbound Link",
+      "kind": "custom",
+      "refersTo": "link-out",
+      "description": "The link out to Thrive Collective. On hover the ground fills with the opposite stock and the authored arrow mark travels 4px right.",
+      "html": "<a class=\"ds-link-out\" href=\"#\">Visit Thrive Collective<svg class=\"ds-link-arrow\" viewBox=\"0 0 48 48\" aria-hidden=\"true\"><rect x=\"2\" y=\"20\" width=\"30\" height=\"8\"/><path d=\"M26 9l19 15-19 15z\"/></svg></a>",
+      "css": ".ds-link-out { display: inline-flex; align-items: center; gap: 10px; font-family: \"Public Sans\", system-ui, sans-serif; font-size: clamp(1.0625rem, 0.98rem + 0.38vw, 1.1875rem); font-weight: 700; line-height: 1.6; text-decoration: none; color: var(--petrol, #0E4553); border-bottom: 3px solid var(--petrol, #0E4553); border-radius: 0; padding-bottom: 2px; transition: background-color 180ms cubic-bezier(0.16,1,0.3,1); } .ds-link-out:hover { background: var(--stock-warm, #EDEBE3); } .ds-link-out:focus-visible { outline: 3px solid var(--ink, #14120F); outline-offset: 3px; } .ds-link-arrow { width: 24px; height: 24px; fill: var(--petrol, #0E4553); transition: transform 220ms cubic-bezier(0.16,1,0.3,1); } .ds-link-out:hover .ds-link-arrow { transform: translateX(4px); }"
+    },
+    {
+      "name": "Masthead Navigation",
+      "kind": "nav",
+      "refersTo": "masthead",
+      "description": "Five text links in the sticky petrol masthead over a 2px transparent underline channel. Hover and the scroll-spy current state fill the same channel, so the current section reads as a hover that stayed. State is carried on aria-current, not a class.",
+      "html": "<header class=\"ds-masthead\"><div class=\"ds-masthead-in\"><a class=\"ds-wordmark\" href=\"#\"><span class=\"ds-wordmark-name\">Nick Davies</span><span class=\"ds-wordmark-role\">Personal trainer · Exeter</span></a><nav class=\"ds-nav\" aria-label=\"Sections\"><ul><li><a href=\"#\" aria-current=\"true\">My training</a></li><li><a href=\"#\">About Nick</a></li><li><a href=\"#\">Thrive</a></li><li><a href=\"#\">Contact</a></li></ul></nav></div></header>",
+      "css": ".ds-masthead { background: var(--petrol, #0E4553); color: #fff; padding-inline: 24px; } .ds-masthead-in { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; justify-content: space-between; padding-block: 12px; } .ds-wordmark { text-decoration: none; display: flex; flex-direction: column; color: #fff; } .ds-wordmark-name { font-family: \"Archivo\", system-ui, sans-serif; font-variation-settings: \"wdth\" 112; font-weight: 800; font-size: 1.2rem; line-height: 1.04; letter-spacing: -0.02em; } .ds-wordmark-role { font-family: \"Public Sans\", system-ui, sans-serif; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: #BFD4D6; } .ds-nav ul { display: flex; flex-wrap: wrap; gap: 20px; list-style: none; margin: 0; padding: 0; } .ds-nav a { font-family: \"Public Sans\", system-ui, sans-serif; font-size: 0.9375rem; font-weight: 600; color: #fff; text-decoration: none; padding-block: 2px; border-bottom: 2px solid transparent; transition: border-color 160ms cubic-bezier(0.16,1,0.3,1); } .ds-nav a:hover, .ds-nav a[aria-current=\"true\"] { border-bottom-color: #fff; } .ds-nav a:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Contact Details",
+      "kind": "custom",
+      "refersTo": "notice-panel",
+      "description": "A flex-wrapped definition list beneath a 2px rule on the closing petrol panel. Terms are tracked uppercase in a muted panel tint; values are 600-weight white links.",
+      "html": "<dl class=\"ds-details\"><div><dt>Email</dt><dd><a href=\"#\">thrivecollectiveexeter@gmail.com</a></dd></div><div><dt>Instagram</dt><dd><a href=\"#\">@wheres_nick_gone</a></dd></div><div><dt>Where</dt><dd><a href=\"#\">Thrive Collective, Exeter</a></dd></div></dl>",
+      "css": ".ds-details { display: flex; flex-wrap: wrap; gap: 16px 48px; margin: 40px 0 0; padding: 24px 24px 0; background: var(--petrol, #0E4553); border-top: 2px solid #33646F; font-family: \"Public Sans\", system-ui, sans-serif; } .ds-details dt { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #A8C4C7; margin-bottom: 2px; } .ds-details dd { margin: 0; font-weight: 600; } .ds-details a { color: #fff; text-decoration-thickness: 2px; text-underline-offset: 0.18em; } .ds-details a:hover { text-decoration-thickness: 3px; } .ds-details a:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Placeholder Marker",
+      "kind": "chip",
+      "refersTo": "placeholder-draft",
+      "description": "Unfinished content, honestly marked. 2px dashed sage is used nowhere else on the page. Carries a data-draft hook; CONTENT.md holds the replacement list. These leave with the placeholder when real content lands.",
+      "html": "<p class=\"ds-draft\" data-draft>Draft copy: Nick to confirm or rewrite every line above before this goes live.</p><figure class=\"ds-slot\"><div class=\"ds-slot-art\" aria-hidden=\"true\"></div><figcaption>Photograph of Nick to supply. Landscape, at least 1600&nbsp;px wide.</figcaption></figure>",
+      "css": ".ds-draft { margin: 0; padding: 12px 16px; border: 2px dashed var(--sage, #4C8B7C); border-radius: 0; color: var(--ink-2, #3E5257); font-family: \"Public Sans\", system-ui, sans-serif; font-size: 0.9375rem; font-weight: 600; line-height: 1.6; max-width: 68ch; } .ds-slot { margin: 32px 0 0; } .ds-slot-art { aspect-ratio: 16 / 9; border: 2px dashed var(--sage, #4C8B7C); background: rgba(76, 139, 124, 0.10); } .ds-slot figcaption { margin-top: 8px; font-family: \"Public Sans\", system-ui, sans-serif; font-size: 0.9375rem; font-weight: 600; line-height: 1.6; color: var(--ink-2, #3E5257); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Public Notice",
+    "overview": "This is a trainer's page written in the register of a public-health notice, not a gym advert. It refuses the arms-folded trainer hero and the cream-and-serif wellness page with equal firmness, because both are advertising and this is information. The visitor arrives already half-convinced that fitness is not for them; the page answers plain questions plainly and asks for one message. Every visual decision serves that reading and nothing else.\n\nThe material is printed matter: flat petrol fields overprinted on leaflet stock, hard rules, no depth of any kind. There is no shadow, no gradient, no rounded corner and no blur anywhere in the stylesheet — verified, not aspirational. Depth comes from the ground a block sits on, and separation comes from a ruled line. The page is dense with text and generous with air around it, and it is deliberately quiet everywhere except one place: a single yellow rectangle that is the only saturated warm thing on the page.\n\nStructure is a single layout law repeated six times: a margin index column carrying an authored Isotype mark, and a body column carrying the heading and its answer, meeting on one continuous seam that runs the full height of the page. The marks are drawn, not licensed — four solid symbols on a 48-unit grid, holes cut with fill-rule so they read on any ground. There is one page, no component library, and no photography; where content is missing it says so in a dashed sage box rather than pretending.",
+    "keyCharacteristics": [
+      "Flat overprint only — no shadow, no gradient, no radius, anywhere",
+      "Petrol fields alternating with two weights of leaflet stock",
+      "One signal yellow, worn by the action and nothing else",
+      "One index-plus-body seam governing all six sections",
+      "Authored Isotype marks at whole divisions of a 48-unit grid",
+      "Motion is ornament; every animated element has a complete static reading",
+      "Placeholders are visibly, honestly marked and must not ship"
+    ],
+    "rules": [
+      {
+        "name": "The One Yellow Object Rule",
+        "body": "Signal yellow touches exactly one thing: the action. Only .action may wear it. Not a heading, not an underline, not a mark, not a hover state on anything else, not a focus ring — the skip link is deliberately white for this reason, and the comment saying so is in the stylesheet. The single cited exception is ::selection, themed from the palette under the craft floor's browser-surfaces requirement; that exception does not generalise.",
+        "section": "colors"
+      },
+      {
+        "name": "The Three Grounds Rule",
+        "body": "A block sits on petrol, on stock, or on ink. There is no fourth ground and no tinted card floating on top of one. Contrast between adjacent sections is achieved by alternating stock and warm stock, never by a border, a shadow or a container.",
+        "section": "colors"
+      },
+      {
+        "name": "The Width-Axis Ladder Rule",
+        "body": "Rank is expressed on Archivo's width axis before it is expressed in size: 118 for the page question, 116 and 112 for section headings, 108 for the action, 104 for row titles, 100 for quoted speech. A new heading picks its width from that ladder rather than inventing a value.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Eyebrow Rule",
+        "body": "A mark plus a tracked uppercase label stacked directly above a heading is an eyebrow, which the craft floor bans outright. The index label is legitimate only while it sits beside the heading in the margin column. Below 861px, where the columns collapse, .law-label is set to display: none for exactly this reason — the mark and the rule stay, the label goes. Do not restore it, and do not add a second one.",
+        "section": "typography"
+      },
+      {
+        "name": "The Scoped Sheet Rule",
+        "body": "Body-copy colour is scoped as .sheet .law-body > p, never unscoped. Unscoped, that selector outranks .lead and .draft.on-dark on specificity and renders both near-invisible on the petrol panels. Any new paragraph rule inside .law-body inherits this constraint: scope it to its ground.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Seam Rule",
+        "body": "Every section is an index column plus a body column meeting on one seam. Six sections, one law, no exceptions — a full-bleed panel and a text sheet obey it identically. Any new section adopts .law or it does not belong on this page.",
+        "section": "layout"
+      },
+      {
+        "name": "The Eight-Unit Rule",
+        "body": "Type, marks, panels and gaps all resolve against one 8px modular grid. Sizes are calc(var(--unit) * n); measures are stated in ch; nothing is nudged with an arbitrary pixel.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Overprint Rule",
+        "body": "This is printed matter. If a treatment could not survive being printed in two flat inks on uncoated stock, it does not belong here. Reach for a ground change or a rule; never for a shadow, a gradient, a glow or a translucent card.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Whole-Division Rule",
+        "body": "Marks render only at whole divisions of their grid: 48px and 24px for the Isotype set, 32px and 24px for the tick. A mark at 30px or 40px is a bug, because the 48-unit geometry stops landing on device pixels.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Complete Static Reading Rule",
+        "body": "Every animated element renders complete and correct with JavaScript disabled and with motion disabled. Motion may emphasise, never inform. The implementation pattern is mandatory: the finished state is the CSS default, and JS un-sets it only after confirming both capability and consent. A future editor who inverts this — animating in from an empty default — ships a broken page to every no-JS visitor.",
+        "section": "components"
+      },
+      {
+        "name": "The Legible Event Rule",
+        "body": "Every state change is a physical event, not a silent swap. The tick draws. The action lifts and presses back. The arrow travels. The nav channel fills. Each has a stated duration and easing (--ease: cubic-bezier(0.16, 1, 0.3, 1); 160ms nav, 180ms link ground, 220ms action and arrow, 520ms tick). Nothing changes appearance instantly and nothing changes without a cause the visitor can see.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do give every new section the layout law — index column plus body column on the one seam — including full-bleed panels.",
+      "Do express spacing as calc(var(--unit) * n) against the 8px unit, and measures in ch against --measure (68ch).",
+      "Do pick a display heading's width-axis value from the established ladder (118 / 116 / 112 / 108 / 104 / 100) before reaching for a new size.",
+      "Do draw any new mark in the Isotype grammar: solid fills on a 48-unit grid, holes cut with fill-rule, rendered only at 48px or 24px.",
+      "Do scope paragraph colour rules to their ground (.sheet .law-body > p), so a light-ground rule cannot outrank .lead or .draft.on-dark on the petrol panels.",
+      "Do write the finished state as the CSS default and let JS remove it, so no-JS and reduced-motion visitors get the complete reading.",
+      "Do mark unfinished content visibly in 2px dashed sage with a data-draft hook, and say plainly what is missing.",
+      "Do separate blocks with a ruled line or a ground change."
+    ],
+    "donts": [
+      "Don't put signal yellow on anything other than the two .action links — not headings, underlines, marks, focus rings, hovers or the skip link. ::selection is the one cited exception and it does not generalise.",
+      "Don't introduce a shadow, gradient, glow, blur or translucent card. The build has none, by contract.",
+      "Don't add a border-radius. Every corner on this page is square.",
+      "Don't stack a mark and a tracked uppercase label directly above a heading — that is an eyebrow, and it is banned. The index label is legitimate only beside the heading; it is correctly hidden below 861px.",
+      "Don't render an Isotype mark at a size that is not a whole division of its 48-unit grid.",
+      "Don't animate an element in from an absent or empty default state.",
+      "Don't use dashed borders decoratively; a dash means the content is unfinished.",
+      "Don't add a photograph or illustration to a petrol notice panel — the first viewport holds the question, the answer, and the action, and nothing else.",
+      "Don't introduce a fourth ground colour or float a tinted card over an existing one.",
+      "Don't reintroduce Thrive Collective's identity (dark charcoal, #FF5A00, Montserrat). This site links to Thrive; it must never read as a Thrive sub-page."
+    ]
+  }
+}

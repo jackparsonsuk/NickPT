@@ -1,0 +1,515 @@
+/* Nick Davies — personal trainer, Exeter.
+   World: public-health information design. Flat overprint only.
+   No shadow and no gradient appears anywhere in this file, by contract. */
+
+:root {
+  --petrol: #0E4553;
+  --stock: #F6F5F1;
+  --stock-warm: #EDEBE3;
+  --ink: #14120F;
+  --ink-2: #3E5257;
+  --signal: #FFC400;   /* reserved: the action, and nothing else */
+  --sage: #4C8B7C;
+  --rule: #C9C6BB;
+
+  --unit: 8px;
+  --measure: 68ch;
+  --shell: 1180px;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--unit) * 11);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--stock);
+  color: var(--ink);
+  font-family: "Public Sans", system-ui, sans-serif;
+  font-size: clamp(1.0625rem, 0.98rem + 0.38vw, 1.1875rem);
+  line-height: 1.6;
+  font-synthesis-weight: none;
+}
+
+/* Browser surfaces themed from the palette, not left to the UA. */
+::selection { background: var(--signal); color: var(--ink); }
+:root { accent-color: var(--petrol); caret-color: var(--petrol); }
+@supports (scrollbar-color: red blue) {
+  html { scrollbar-color: var(--petrol) var(--stock-warm); scrollbar-width: auto; }
+}
+::-webkit-scrollbar { width: 14px; height: 14px; }
+::-webkit-scrollbar-track { background: var(--stock-warm); }
+::-webkit-scrollbar-thumb { background: var(--petrol); border: 3px solid var(--stock-warm); }
+
+:where(a):focus-visible,
+:where(button):focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+.notice :where(a):focus-visible,
+.masthead :where(a):focus-visible,
+.foot :where(a):focus-visible { outline-color: #fff; }
+
+h1, h2, h3, h4, .wordmark-name {
+  font-family: "Archivo", system-ui, sans-serif;
+  font-variation-settings: "wdth" 112;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+  text-wrap: balance;
+  margin: 0;
+}
+
+p { margin: 0 0 calc(var(--unit) * 2); }
+p:last-child { margin-bottom: 0; }
+
+a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 3px; }
+
+.shell {
+  width: 100%;
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: calc(var(--unit) * 3);
+}
+
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 20;
+  /* White, not the signal yellow: that colour is reserved for the one action. */
+  background: #fff;
+  color: var(--ink);
+  padding: calc(var(--unit) * 1.5) calc(var(--unit) * 3);
+  font-weight: 700;
+}
+.skip:focus { left: 0; }
+
+/* ---------- masthead ---------- */
+
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--petrol);
+  color: #fff;
+}
+.masthead-in {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--unit) calc(var(--unit) * 3);
+  align-items: baseline;
+  justify-content: space-between;
+  padding-block: calc(var(--unit) * 1.5);
+}
+.wordmark { text-decoration: none; display: flex; flex-direction: column; }
+.wordmark-name { font-size: 1.2rem; font-weight: 800; }
+.wordmark-role {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #BFD4D6;
+}
+.nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--unit) * 2.5);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav a {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding-block: 2px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 160ms var(--ease);
+}
+.nav a:hover, .nav a[aria-current="true"] { border-bottom-color: #fff; }
+
+/* ---------- the petrol notice panels ---------- */
+
+.notice {
+  background: var(--petrol);
+  color: #fff;
+  padding-block: clamp(calc(var(--unit) * 7), 11vw, calc(var(--unit) * 15));
+}
+/* The panel carries the same index/body seam as every sheet section, so the
+   page has one left edge rather than two. */
+.notice .law { border-top: 3px solid #6E9AA1; padding-top: calc(var(--unit) * 4); }
+.notice .law-index { border-top: none; padding-top: 0; }
+.notice .law-label { color: #BFD4D6; }
+/* Petrol ground: the mark inverts, because its default fill *is* the ground. */
+.notice .mark { fill: #fff; }
+.notice h1 {
+  font-size: clamp(2.35rem, 1.35rem + 4.5vw, 4.35rem);
+  font-variation-settings: "wdth" 118;
+  max-width: 22ch;
+}
+.notice h2 {
+  font-size: clamp(2.1rem, 1.3rem + 3.4vw, 3.6rem);
+  font-variation-settings: "wdth" 116;
+  max-width: 16ch;
+}
+.lead {
+  margin-top: calc(var(--unit) * 3);
+  max-width: 46ch;
+  font-size: clamp(1.3125rem, 1.2rem + 0.5vw, 1.5rem);
+  color: #EDF4F4;
+}
+
+/* the single yellow object on the page */
+.act { margin-top: calc(var(--unit) * 6); }
+.action {
+  display: inline-block;
+  background: var(--signal);
+  color: var(--ink);
+  font-family: "Archivo", system-ui, sans-serif;
+  font-variation-settings: "wdth" 108;
+  font-weight: 700;
+  font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  padding: calc(var(--unit) * 2) calc(var(--unit) * 4);
+  transition: transform 220ms var(--ease), background-color 220ms var(--ease);
+}
+.action:hover { background: #FFD447; transform: translateY(-2px); }
+.action:active { transform: translateY(0); }
+.act-note {
+  margin-top: calc(var(--unit) * 2);
+  max-width: 44ch;
+  font-size: 0.9375rem;
+  color: #C3D6D8;
+}
+.act-note a { color: #fff; }
+
+/* The Christmas figures. Big and white, never yellow: the signal belongs to the
+   action underneath them, and two yellow objects would cost the page its
+   pointer. Reuses the headline-panel step rather than inventing a money size. */
+.figs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--unit) * 3) calc(var(--unit) * 8);
+  list-style: none;
+  margin: calc(var(--unit) * 4) 0 0;
+  padding: calc(var(--unit) * 3) 0 0;
+  border-top: 2px solid #33646F;
+}
+.figs-n {
+  margin: 0;
+  font-family: "Archivo", system-ui, sans-serif;
+  font-size: clamp(2.1rem, 1.3rem + 3.4vw, 3.6rem);
+  font-variation-settings: "wdth" 116;
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+.figs-t {
+  margin: calc(var(--unit) * 1.5) 0 0;
+  max-width: 26ch;
+  font-size: 0.9375rem;
+  color: #C3D6D8;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--unit) * 2) calc(var(--unit) * 6);
+  margin: calc(var(--unit) * 5) 0 0;
+  padding-top: calc(var(--unit) * 3);
+  border-top: 2px solid #33646F;
+}
+.details dt {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #A8C4C7;
+  margin-bottom: 2px;
+}
+.details dd { margin: 0; font-weight: 600; }
+.details + .act-note { margin-top: calc(var(--unit) * 3); }
+
+/* ---------- the layout law: index column + body column ---------- */
+
+.sheet { padding-block: clamp(calc(var(--unit) * 7), 9vw, calc(var(--unit) * 13)); }
+.sheet.alt { background: var(--stock-warm); }
+
+.law {
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  gap: calc(var(--unit) * 5);
+  align-items: start;
+}
+.law-index {
+  position: sticky;
+  top: calc(var(--unit) * 13);
+  border-top: 3px solid var(--ink);
+  padding-top: calc(var(--unit) * 2);
+}
+.mark { display: block; width: 48px; height: 48px; fill: var(--petrol); stroke: none; }
+.law-label {
+  margin: calc(var(--unit) * 1.5) 0 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.law-body h2 {
+  font-size: clamp(1.9rem, 1.25rem + 2.8vw, 3.1rem);
+  margin-bottom: calc(var(--unit) * 3);
+  max-width: 18ch;
+}
+/* Scoped to the light sheets: on a petrol panel this rule outranked .lead
+   and .draft.on-dark on specificity and turned both near-invisible. */
+.sheet .law-body > p { max-width: var(--measure); color: var(--ink-2); }
+.prose p { max-width: var(--measure); }
+.prose p + p { margin-top: calc(var(--unit) * 2); }
+/* Sub-headings inside a long section. They sit a full step below the section h2
+   so the section still reads as one thing, not as several stacked ones. */
+.sub {
+  margin: calc(var(--unit) * 6) 0 calc(var(--unit) * 2);
+  font-size: clamp(1.5rem, 1.3rem + 0.9vw, 2rem);
+  font-variation-settings: "wdth" 108;
+  max-width: 24ch;
+}
+
+/* ---------- ruled rows: the same rhythm as the tick list, without the ticks ----------
+   Used by Where I train, Prices, and the Thrive roster, so those three do not
+   each invent their own arrangement. */
+
+.rows {
+  list-style: none;
+  margin: calc(var(--unit) * 4) 0 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+.rows li {
+  padding-block: calc(var(--unit) * 3);
+  border-bottom: 1px solid var(--rule);
+}
+.rows :is(h3, h4) {
+  font-size: clamp(1.3125rem, 1.22rem + 0.42vw, 1.5rem);
+  font-variation-settings: "wdth" 104;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  line-height: 1.28;
+  max-width: 34ch;
+}
+.rows p {
+  margin: var(--unit) 0 0;
+  max-width: 58ch;
+  color: var(--ink-2);
+}
+/* A subtitle, not a label. The uppercase label register holds up over one to
+   three words; "Personal trainer & founder of Cloud9 Wellness" is 45 characters
+   of letterspaced caps, which is a passage. Sentence case, note size. */
+.rows-role {
+  margin-top: calc(var(--unit) * 0.75);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+.after-rows { margin-top: calc(var(--unit) * 4); }
+
+/* ---------- the tick list: the page's one authored moment ---------- */
+
+.ticks {
+  list-style: none;
+  margin: calc(var(--unit) * 4) 0 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+.ticks li {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: calc(var(--unit) * 2.5);
+  padding-block: calc(var(--unit) * 3);
+  border-bottom: 1px solid var(--rule);
+}
+.ticks h3 {
+  font-size: clamp(1.3125rem, 1.22rem + 0.42vw, 1.5rem);
+  font-variation-settings: "wdth" 104;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  line-height: 1.28;
+}
+.ticks p {
+  margin: calc(var(--unit) * 1) 0 0;
+  max-width: 58ch;
+  color: var(--ink-2);
+}
+.tick { width: 32px; height: 32px; margin-top: 2px; }
+.tick-box { fill: none; stroke: var(--petrol); stroke-width: 2.5; }
+.tick-mark {
+  fill: none;
+  stroke: var(--petrol);
+  stroke-width: 4;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-dasharray: 26;
+  stroke-dashoffset: 0;
+}
+/* Default is stamped. Only a browser that both runs JS and allows motion
+   un-stamps them, so the static reading is never the broken one. */
+.js-motion .tick-mark { stroke-dashoffset: 26; }
+.js-motion .is-stamped .tick-mark {
+  stroke-dashoffset: 0;
+  /* Exponential ease-out: the stroke carries weight into its stop and settles,
+     rather than snapping or bouncing. */
+  transition: stroke-dashoffset 520ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---------- placeholders, honestly marked ---------- */
+
+.draft {
+  margin-top: calc(var(--unit) * 4);
+  padding: calc(var(--unit) * 1.5) calc(var(--unit) * 2);
+  border: 2px dashed var(--sage);
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  max-width: var(--measure);
+}
+.draft.on-dark { border-color: #7FA6AC; color: #C3D6D8; }
+
+.slot { margin: calc(var(--unit) * 4) 0 0; }
+.slot-art {
+  aspect-ratio: 16 / 9;
+  border: 2px dashed var(--sage);
+  background: rgba(76, 139, 124, 0.10);
+}
+.slot figcaption {
+  margin-top: var(--unit);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+/* Two columns, fixed: auto-fit resolved to three in the body column and left the
+   fourth slot orphaned on its own row. */
+.slots {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: calc(var(--unit) * 3);
+  margin-top: calc(var(--unit) * 3);
+}
+.slots .slot { margin: 0; }
+
+.quotes {
+  display: grid;
+  gap: calc(var(--unit) * 3);
+  margin-top: calc(var(--unit) * 4);
+}
+.quote {
+  margin: 0;
+  padding: calc(var(--unit) * 3);
+  border: 2px dashed var(--sage);
+}
+.quote p {
+  margin: 0;
+  font-family: "Archivo", system-ui, sans-serif;
+  font-variation-settings: "wdth" 100;
+  font-size: clamp(1.3125rem, 1.2rem + 0.5vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.4;
+  max-width: 52ch;
+}
+.quote cite {
+  display: block;
+  margin-top: calc(var(--unit) * 2);
+  font-family: "Public Sans", system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.outbound { margin-top: calc(var(--unit) * 4); }
+.link-out {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--unit) * 1.25);
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--petrol);
+  border-bottom: 3px solid var(--petrol);
+  padding-bottom: 2px;
+  transition: background-color 180ms var(--ease);
+}
+.link-out:hover { background: var(--stock-warm); }
+.sheet.alt .link-out:hover { background: var(--stock); }
+.link-arrow {
+  width: 24px;
+  height: 24px;
+  fill: var(--petrol);
+  transition: transform 220ms var(--ease);
+}
+.link-out:hover .link-arrow { transform: translateX(4px); }
+
+/* ---------- foot ---------- */
+
+.foot {
+  background: var(--ink);
+  color: #C8C6C0;
+  padding-block: calc(var(--unit) * 5);
+  font-size: 0.9375rem;
+}
+.foot-in {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--unit) calc(var(--unit) * 4);
+  justify-content: space-between;
+}
+.foot p { margin: 0; }
+.foot a { color: #fff; }
+
+/* ---------- narrow ---------- */
+
+@media (max-width: 860px) {
+  .law { grid-template-columns: 1fr; gap: calc(var(--unit) * 3); }
+  /* The mark + tracked uppercase label above a heading is an eyebrow, which the
+     craft floor bans outright. Keep the rule and the mark; the label only
+     restated the heading beneath it. */
+  .law-index { position: static; }
+  .law-label { display: none; }
+  .notice .law-index { display: none; }
+  .notice .law { padding-top: calc(var(--unit) * 3); }
+  .mark { width: 24px; height: 24px; }
+}
+
+@media (max-width: 640px) {
+  .masthead { position: static; }
+  .masthead-in { display: block; }
+  .wordmark { margin-bottom: calc(var(--unit) * 1.5); }
+  /* Two columns, not three: six items with labels this long overflowed a
+     three-column grid rather than wrapping inside it. */
+  .nav ul {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: var(--unit) calc(var(--unit) * 3);
+  }
+  .action { display: block; text-align: center; padding-inline: calc(var(--unit) * 2); }
+  .ticks li { grid-template-columns: 24px minmax(0, 1fr); gap: calc(var(--unit) * 2); }
+  .tick { width: 24px; height: 24px; }
+  .slots { grid-template-columns: 1fr; }
+  .figs { gap: calc(var(--unit) * 3) calc(var(--unit) * 4); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

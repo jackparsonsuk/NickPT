@@ -1,0 +1,16 @@
+# Impeccable's skill payload — large, regenerable via `npx impeccable install`.
+# The project's own impeccable records (PRODUCT.md, DESIGN.md, .impeccable/config.json)
+# are tracked deliberately; these are not.
+.claude/skills/impeccable/
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/config.local.json
+.impeccable/decision-payload*.json
+.impeccable/questions/
+
+# Vercel
+.vercel/
+
+# OS
+Thumbs.db
+.DS_Store
