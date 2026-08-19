@@ -340,7 +340,11 @@ The Thrive Collective link out. Inline-flex, petrol text, 3px petrol underline, 
 
 ### Navigation
 
-Six text links in the sticky petrol masthead, Public Sans 600 at `0.9375rem`, each sitting over a 2px transparent underline channel. Hover and the scroll-spy current state both fill that channel white over 160ms — the same treatment for both, so the current section reads as a hover that stayed. `aria-current="true"` is the state carrier, set by an IntersectionObserver with a `-45%/-50%` root margin; the styling hangs off the ARIA attribute, not a class.
+Six text links in the sticky petrol masthead, Public Sans 600 at `0.9375rem`, each sitting over a transparent underline channel. Hover and the scroll-spy current state both fill that channel white over 160ms — the same treatment for both, so the current section reads as a hover that stayed. `aria-current="true"` is the state carrier, set by an IntersectionObserver with a `-45%/-50%` root margin; the styling hangs off the ARIA attribute, not a class.
+
+Below 641px the masthead becomes two compact rows — wordmark, then a full-bleed index strip that scrolls sideways — and **stays sticky**. It was `position: static` there originally, which spent 173px of an 812px screen once and never returned it, pushing the action below the fold on any handset with browser chrome. The strip carries no fade at its overflow edge, because the contract bans gradients: the affordance is the cut item itself. The channel becomes the link's full 44px height, which makes the current section far more legible than a 2px line under text.
+
+`scroll-padding-top` is not one value. The desktop bar is 69px and takes `88px`; the narrow bar is 102px and takes `112px`; a coarse pointer between 641 and 860px wraps the bar to 115px and takes `120px`. Change a bar height and this must move with it, or anchor jumps land underneath the masthead.
 
 ### Contact Details
 
@@ -354,6 +358,10 @@ Three shapes, one language, all in 2px dashed sage:
 - **Quote block** — a dashed container holding placeholder testimonial copy and a placeholder citation.
 
 Every one carries a `data-draft` or `data-slot` hook. `CONTENT.md` holds the user's replacement list. These are build-state devices: when real content arrives, the dashed border leaves with the placeholder.
+
+### Target Size
+
+Tap targets are sized by **input device, not viewport width** — a large phone in landscape sits above the 640px breakpoint and is still a thumb, so `@media (pointer: coarse)` carries the rule and is deliberately placed *before* the width blocks so narrower rules still win. Nav and contact links are `24px` minimum everywhere (they were 23px and 22px, a one-pixel miss of WCAG 2.2 AA 2.5.8) and `44px` on any coarse pointer. The only links left under 24px are inline inside a sentence, which 2.5.8 exempts.
 
 ### Focus
 
@@ -376,6 +384,8 @@ A 3px solid ink outline at 3px offset on every link and button, switching to whi
 - **Do** write the finished state as the CSS default and let JS remove it, so no-JS and reduced-motion visitors get the complete reading.
 - **Do** mark unfinished content visibly in 2px dashed sage with a `data-draft` hook, and say plainly what is missing.
 - **Do** separate blocks with a ruled line or a ground change.
+- **Do** keep `scroll-padding-top` in step with the masthead height at every breakpoint and pointer type; there are three values and they are not interchangeable.
+- **Do** size tap targets from `pointer: coarse`, not from a width breakpoint.
 - **Do** reach for `.rows` before inventing a new list arrangement, and for an existing type step before adding one to the ramp.
 
 ### Don't:
@@ -386,6 +396,8 @@ A 3px solid ink outline at 3px offset on every link and button, switching to whi
 - **Don't** render an Isotype mark at a size that is not a whole division of its 48-unit grid.
 - **Don't** animate an element in from an absent or empty default state.
 - **Don't** use dashed borders decoratively; a dash means the content is unfinished.
+- **Don't** add a floating or fixed call-to-action bar. The action appears three times in the flow, on the page's own grid line; a persistent CTA is advertising furniture and the thesis refuses it.
+- **Don't** mark the overflow edge of the narrow index strip with a fade — that is a gradient.
 - **Don't** add a photograph or illustration to a petrol notice panel — the first viewport holds the question, the answer, and the action, and nothing else.
 - **Don't** introduce a fourth ground colour or float a tinted card over an existing one.
 - **Don't** reintroduce Thrive Collective's identity (dark charcoal, `#FF5A00`, Montserrat). This site links to Thrive; it must never read as a Thrive sub-page.

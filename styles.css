@@ -128,6 +128,11 @@ a:hover { text-decoration-thickness: 3px; }
   padding: 0;
 }
 .nav a {
+  /* 24px is the floor WCAG 2.2 AA 2.5.8 sets, and these were 23px at every
+     width — a one-pixel miss of a real criterion. Touch raises it to 44 below. */
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
   font-size: 0.9375rem;
   font-weight: 600;
   text-decoration: none;
@@ -213,6 +218,9 @@ a:hover { text-decoration-thickness: 3px; }
   font-weight: 800;
   line-height: 1.04;
   letter-spacing: -0.02em;
+  /* Equal-width digits, so the captions beside them stay in a column on narrow
+     screens whatever the prices become. */
+  font-variant-numeric: tabular-nums;
 }
 .figs-t {
   margin: calc(var(--unit) * 1.5) 0 0;
@@ -237,6 +245,7 @@ a:hover { text-decoration-thickness: 3px; }
   margin-bottom: 2px;
 }
 .details dd { margin: 0; font-weight: 600; }
+.details dd a { display: inline-flex; align-items: center; min-height: 24px; }
 .details + .act-note { margin-top: calc(var(--unit) * 3); }
 
 /* ---------- the layout law: index column + body column ---------- */
@@ -474,6 +483,28 @@ a:hover { text-decoration-thickness: 3px; }
 .foot p { margin: 0; }
 .foot a { color: #fff; }
 
+/* ---------- touch ----------
+   Target size belongs to the input device, not the viewport width: a large phone
+   in landscape sits above the 640px breakpoint and is still a thumb. WCAG 2.2
+   2.5.8 asks 24px; these were 23px and 20px, so they failed it outright. */
+
+@media (pointer: coarse) {
+  .nav a,
+  .details dd a,
+  .link-out {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .nav a { padding-inline: calc(var(--unit) * 1.5); }
+  .nav li:first-child a { margin-inline-start: calc(var(--unit) * -1.5); }
+  .foot a { display: inline-block; padding-block: calc(var(--unit) * 0.75); }
+  /* Thumb-sized nav links push the masthead past the 88px the desktop bar needs
+     — between 641px and 860px it wraps to two rows and stands 101px tall, which
+     the default scroll padding would land anchors underneath. */
+  html { scroll-padding-top: calc(var(--unit) * 15); }
+}
+
 /* ---------- narrow ---------- */
 
 @media (max-width: 860px) {
@@ -489,21 +520,83 @@ a:hover { text-decoration-thickness: 3px; }
 }
 
 @media (max-width: 640px) {
-  .masthead { position: static; }
-  .masthead-in { display: block; }
-  .wordmark { margin-bottom: calc(var(--unit) * 1.5); }
-  /* Two columns, not three: six items with labels this long overflowed a
-     three-column grid rather than wrapping inside it. */
+  /* The masthead stays sticky here. The page is fourteen screens long on a phone,
+     and the previous static header spent 173px of an 812px screen once and never
+     gave it back — which pushed the action below the fold on any handset with
+     browser chrome. Two compact rows instead: the wordmark, then a full-bleed
+     index strip that scrolls sideways and stays put. */
+  .masthead-in { display: block; padding-block: 0; }
+  .wordmark { padding-block: calc(var(--unit) * 1.25); }
+  .wordmark-name { font-size: 1.0625rem; }
+
+  .nav { margin-inline: calc(var(--unit) * -3); }
   .nav ul {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    gap: var(--unit) calc(var(--unit) * 3);
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    padding-inline: calc(var(--unit) * 3);
+    border-top: 1px solid #33646F;
+    /* No fade or shadow marks the overflow edge — the contract bans gradients,
+       so the affordance is the cut item itself. */
+    scrollbar-width: none;
   }
+  .nav ul::-webkit-scrollbar { display: none; }
+  .nav li { flex: 0 0 auto; }
+  /* 44px, not the 23px these were: 2.5.8 asks for 24 and a thumb wants more.
+     The full-height channel also makes the current section far more legible
+     than a 2px line under the text did. */
+  .nav a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 calc(var(--unit) * 1.5);
+    border-bottom-width: 3px;
+  }
+  .nav li:first-child a { margin-inline-start: calc(var(--unit) * -1.5); }
+
+  /* Buy back the first viewport so the action clears the fold. */
+  .notice { padding-block: calc(var(--unit) * 5); }
+  .act { margin-top: calc(var(--unit) * 4); }
+  /* The seam rule marks the index/body seam, and at this width there is no index
+     column to mark — on the hero it just read as a second underline below the
+     sticky bar. The petrol-to-stock ground change already separates the panels. */
+  .notice .law { border-top: none; padding-top: 0; }
+
   .action { display: block; text-align: center; padding-inline: calc(var(--unit) * 2); }
   .ticks li { grid-template-columns: 24px minmax(0, 1fr); gap: calc(var(--unit) * 2); }
   .tick { width: 24px; height: 24px; }
   .slots { grid-template-columns: 1fr; }
-  .figs { gap: calc(var(--unit) * 3) calc(var(--unit) * 4); }
+
+  /* Figure and caption share a line: it reads as a price list and saves a
+     screen-third over the stacked version. */
+  .figs { gap: calc(var(--unit) * 2) 0; }
+  .figs li {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 0 calc(var(--unit) * 2);
+    align-items: baseline;
+  }
+  .figs-t { margin-top: 0; max-width: none; }
+
+  /* The contact list is the whole point of the page on a phone. Every row a
+     thumb-sized target. */
+  .details { gap: calc(var(--unit) * 1.5) calc(var(--unit) * 4); }
+  .details dd a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .link-out { min-height: 44px; }
+
+  /* The sticky bar is 102px here, not the 88px the desktop one is, so anchor
+     jumps would otherwise land underneath it. */
+  html { scroll-padding-top: calc(var(--unit) * 14); }
+
+  .foot-in { gap: calc(var(--unit) * 2) calc(var(--unit) * 4); }
+  .foot a { display: inline-block; padding-block: calc(var(--unit) * 0.75); }
 }
 
 @media (prefers-reduced-motion: reduce) {
