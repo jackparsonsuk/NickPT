@@ -93,9 +93,10 @@ site must never paper over that.
 - The Thrive section carries **four biographies of other named people** (Tom
   Bottoms, Mark Flynn, Sarah Patterson, Charlie Reynolds), supplied by Nick and
   unverified against those people. Do not embellish them, and do not add a fifth.
-- One unresolved contradiction is deliberately left visible: the copy says
-  "twenty five stone (126kg)", which are two different weights. A `data-draft`
-  note on the page says so. **Do not silently pick one** — it is Nick's call.
+- The starting weight is **twenty stone (126kg)**. The supplied copy originally
+  read "twenty five stone (126kg)" — two different weights — and Nick settled it
+  from his own data on 24 Aug 2026. The `data-draft` note that flagged it is
+  gone. Do not reintroduce either the note or the 25 st figure.
 - The visual identity is **deliberately unlike Thrive's** (Thrive is dark
   charcoal, `#FF5A00` orange, Montserrat). Do not drift toward matching it.
 

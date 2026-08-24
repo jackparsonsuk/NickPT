@@ -11,18 +11,13 @@ which replaced the earlier "not sure the gym is for you" positioning wholesale.
 
 ---
 
-## 1. The weight figure — BLOCKER
+## 1. The weight figure — SETTLED 24 Aug 2026
 
-The About paragraph says *"twenty five stone (126kg)"*. Those two numbers do not
-describe the same weight:
-
-- twenty five stone ≈ **159 kg**
-- 126 kg ≈ **twenty stone**
-
-Most likely "twenty stone" was intended, since 20 st and 126 kg agree almost
-exactly. Nothing has been changed on Nick's behalf, because this is a fact about
-him and only he can settle it. A dashed draft note sits under the paragraph
-saying so, and both the note and the wrong figure must go before launch.
+The supplied copy said *"twenty five stone (126kg)"*, which are two different
+weights (25 st ≈ 159 kg; 126 kg ≈ 20 st). Nick checked his own data on
+**24 Aug 2026** and confirmed the figures are **126 kg and twenty stone**. The
+page now reads "twenty stone (126kg)" and the dashed draft note has been
+removed. Do not reopen this without new word from Nick.
 
 Also note the earlier version of this page said Nick had lost **35kg**. The new
 copy gives a starting weight instead and no total loss, so the 35kg claim has
@@ -148,7 +143,49 @@ the whole section is written in the first person, but check he is happy with it.
 
 ---
 
-## 8. Before launch
+## 8. The web design credit — details needed
+
+Nick asked on **24 Aug 2026** for a footer credit so visitors can get in touch
+about having a site built, and specifically asked that it read as **local**.
+Nothing has been added yet, because a credit publishes real contact details on a
+public page and every value below has to be supplied, not guessed.
+
+Needed before the credit goes in:
+
+1. **Trading name.** Personal name, or a business name if one exists. This is
+   what appears in the footer.
+2. **One contact route, and only one.** Either:
+   - an email address to expose as a `mailto:` link — note that a plain address
+     in the markup will be scraped, so a role address is safer than a personal
+     inbox; or
+   - a URL to link out to, if there is a portfolio or business site; or
+   - a social handle, if that is where enquiries actually arrive.
+3. **The locality wording.** "Exeter", "Devon", "South West" — whichever is
+   truthful. The page's own copy says Exeter, so a mismatch will read oddly.
+4. **The wording of the credit itself.** Something like "Site by NAME, PLACE"
+   versus "Websites for Exeter businesses — NAME". The second solicits work; the
+   first only credits it. Nick's request implies the first is not enough.
+5. **Whether Nick has agreed to it as a solicitation.** It is his site and his
+   audience. He asked for it, so this is a confirmation, not a question — but it
+   should be in writing.
+
+**Settled and built, 24 Aug 2026.** The credit reads *"Made by Jack — websites for
+businesses in Exeter and the South West. jwjparsons@gmail.com"*, on its own row
+below Nick's two footer lines, dimmer and a size down, with the address as the
+only link. Supplied by Jack Parsons, who confirmed the address is fine to publish.
+
+One caveat worth revisiting: a plain `mailto:` in the markup will be harvested.
+That was accepted knowingly, but a role address on a domain would age better than
+a personal Gmail if enquiries ever pick up.
+
+Design note for whoever adds it: the footer is the `.foot` block at the end of
+`index.html`, currently two lines inside `.foot-in`. A third line fits the
+existing flex layout without new CSS. The credit must **not** wear `--signal`
+yellow; that colour belongs to the two `.action` links alone.
+
+---
+
+## 9. Before launch
 
 - Point the site at its real domain.
 - Add a real favicon.

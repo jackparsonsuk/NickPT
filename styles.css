@@ -482,6 +482,15 @@ a:hover { text-decoration-thickness: 3px; }
 }
 .foot p { margin: 0; }
 .foot a { color: #fff; }
+/* The credit is somebody else's line on Nick's page, so it sits on its own row
+   below his, dimmer and smaller. #8C8A85 on --ink is 5.4:1 — still AA at this
+   size — and the address itself stays white, which is where the click goes. */
+.foot p.foot-credit {
+  flex-basis: 100%;
+  margin-block-start: calc(var(--unit) * 2);
+  font-size: 0.875rem;
+  color: #8C8A85;
+}
 
 /* ---------- touch ----------
    Target size belongs to the input device, not the viewport width: a large phone

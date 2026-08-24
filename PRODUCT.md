@@ -85,9 +85,6 @@ so the site has to read as his, not as a Thrive sub-page.
 
 ### Undecided — do not invent
 
-- **The starting weight.** The supplied copy says "twenty five stone (126kg)";
-  those are two different weights (25 st is about 159 kg, 126 kg is about 20 st).
-  Unresolved, and flagged on the page. See `CONTENT.md` section 1.
 - The exact awarding body and completion date of the PT qualification. As of
   2026-08-19 it is **in progress, due by Christmas 2026** — which resolves the
   earlier open question of whether it was already held.
@@ -105,7 +102,12 @@ so the site has to read as his, not as a Thrive sub-page.
 
 ## Brand Commitments
 
-- Name: Nick Davies. Location: Exeter, UK.
+- Name: Nick Davies. Location: Exeter, UK. **Stated reach widened to "Exeter and
+  the South West" on 24 Aug 2026** at the client's instruction, to leave room for
+  growth; he expects to decline anything too far out. The claim lives in the
+  title, meta/OG description and footer only. Both actual venues are still in
+  Devon, so do not extend it into the "Where I train" section, which must stay
+  literally true.
 - Affiliation with Thrive Collective is real and must be visible and linked.
 - Existing channels: Instagram @wheres_nick_gone, WhatsApp 07812055812, email
   nickptexeter@gmail.com. Bookings run through thrivecollectiveexeter.co.uk.
