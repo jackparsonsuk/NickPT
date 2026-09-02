@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nick Davies — Personal Training, Exeter &amp; the South West</title>
 <meta name="description" content="Personal training in Exeter and the South West for dads who want to keep up with their kids and be there for them. One-to-one sessions, dads and lads groups, gym confidence classes and online coaching with Nick Davies.">
-<meta name="theme-color" content="#0E4553">
+<meta name="theme-color" content="#141B22">
 <!-- No rel=canonical until a real domain exists: a wrong canonical is worse than
      none, and a placeholder one hands the site to somebody else's domain.
      Add og:url and og:image at the same time. -->
@@ -14,71 +14,95 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <!--
 THESIS: A trainer's page in the register of a public-health notice, not a gym advert. It refuses the arms-folded trainer hero and the cream-and-serif wellness page alike, because both are advertising and this is information.
-OWN-WORLD: Petrol #0E4553 fields over leaflet stock #F6F5F1, ink #14120F, one signal yellow #FFC400 reserved to the action and nothing else. Authored Isotype section marks, drawn on a 48-unit grid, each in the margin index column beside its heading. Archivo Expanded display, Public Sans text. Flat overprint only: no shadow, no gradient, anywhere.
+OWN-WORLD: Nick's brand, Aug 2026 brief. Ink #141B22 fields over paper #ECEDE9, steel #2E4756 text, grey #7A8C99 on dark grounds only, plate yellow #F2B705 as punctuation — the action, the session device, the headline stop, nothing else. Authored section marks in Nick's own icon grammar: 24-unit grid, even 2-unit stroke, square corners and ends, each in the margin index column beside its heading. Oswald display and labels, Inter text. Flat overprint only: no shadow, no gradient, anywhere.
 STORY: A dad who is tired of watching his kids play from the sofa reads plain answers to his own questions — what happens, where, what it costs — recognises Nick as a man who sat in the same seat, and sends one message.
-FIRST VIEWPORT: Full-bleed petrol panel, no photograph and no illustration. The reader's own situation named reversed out large, answered directly beneath in one short paragraph, and the yellow action on the panel's own grid line. Nothing else is in the frame.
+FIRST VIEWPORT: Full-bleed ink panel, no photograph and no illustration. The reader's own situation named reversed out large, answered directly beneath in one short paragraph, and the yellow action on the panel's own grid line. Nothing else is in the frame.
 FORM: Plain English, candidate 4 of the grounded list, seed bc25206d.
+PROVISIONAL: Nick's brand is not settled — the logo is undecided and the trading name may still change, so the masthead carries a marked logo slot rather than a mark. Palette, type and icon grammar are his brief; the fifth colour, grey, is confined to dark grounds because it is 2.96:1 on paper and would fail AA anywhere else.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 -->
 
 <a class="skip" href="#start">Skip to content</a>
 
 <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-  <!-- Isotype grammar: solid marks on a 48-unit grid, no outline strokes.
-       Holes are cut with fill-rule, never with a background-coloured shape, so
-       every mark reads on any ground. Rendered at 48px and 24px, both whole
-       divisions of the grid. -->
-  <symbol id="ico-talk" viewBox="0 0 48 48">
-    <path d="M5 8h26v19H16l-8 7v-7H5z"/>
-    <path d="M43 16v20h-4v7l-8-7H21v-6h14V16z"/>
+  <!-- Nick's icon grammar, drawn as SVG rather than dropped in as his PNGs so
+       that each mark inverts on the ink panels and stays sharp at any size:
+       a 24-unit grid, an even 2-unit stroke, square corners, no rounding.
+       Rendered at 48px and 24px, both whole multiples of the grid.
+
+       The colour is carried by `color` on the .mark host and picked up here as
+       currentColor, so one CSS rule still inverts a whole mark for a dark
+       ground, and the solid shapes say fill="currentColor" for themselves
+       because a declared value beats an inherited one.
+
+       stroke-width has to be an attribute here rather than a CSS rule on .mark.
+       Set in CSS on the host it computes to an absolute 2 CSS pixels and then
+       inherits across the <use> boundary already resolved, so it ignores the
+       viewBox scale and every mark draws at half weight at 48px. Declared on
+       the symbol it is 2 units of this 24-unit grid, which is the brief.
+       A <g> wrapper would not work either: <use> clones the symbol, not its
+       ancestors. -->
+
+  <!-- A big figure and a small one: the whole reason this page exists.
+       Nick's "dads and lads". -->
+  <symbol id="ico-family" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+    <circle cx="8" cy="5.5" r="3.5"/>
+    <path d="M2 21v-2a6 6 0 0 1 12 0v2"/>
+    <circle cx="17.5" cy="9.5" r="2.5"/>
+    <path d="M13.5 21v-1.5a4 4 0 0 1 8 0V21"/>
   </symbol>
-  <symbol id="ico-record" viewBox="0 0 48 48">
-    <path fill-rule="evenodd" d="M8 4h23l9 9v31H8zm6 15h20v3H14zm0 7h20v3H14zm0 7h13v3H14z"/>
+  <!-- A list of things offered. Drawn to match the set; not one of Nick's. -->
+  <symbol id="ico-list" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M3 2h18v20H3z"/>
+    <path d="M7 8h10M7 12h10M7 16h6"/>
   </symbol>
-  <symbol id="ico-arrow" viewBox="0 0 48 48">
-    <rect x="2" y="20" width="30" height="8"/>
-    <path d="M26 9l19 15-19 15z"/>
+  <!-- Nick's "block booking": the signature device as a grid of sessions. -->
+  <symbol id="ico-blocks" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M2 4h20v16H2z"/>
+    <path d="M8.67 4v16M15.33 4v16M2 12h20"/>
   </symbol>
-  <symbol id="ico-pin" viewBox="0 0 48 48">
-    <path fill-rule="evenodd" d="M24 3c-7.7 0-14 6.3-14 14 0 10.5 14 28 14 28s14-17.5 14-28c0-7.7-6.3-14-14-14zm0 8.6a5.4 5.4 0 1 1 0 10.8 5.4 5.4 0 0 1 0-10.8z"/>
+  <symbol id="ico-pin" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M12 21c0 0-8-5.5-8-11a8 8 0 0 1 16 0c0 5.5-8 11-8 11z"/>
+    <circle cx="12" cy="9.5" r="2.6" fill="currentColor" stroke="none"/>
   </symbol>
-  <!-- A big figure and a small one: the whole reason this page exists. -->
-  <symbol id="ico-family" viewBox="0 0 48 48">
-    <path d="M14 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/>
-    <path d="M7 17h14v27h-4.5V33h-5v11H7z"/>
-    <path d="M33 14a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6z"/>
-    <path d="M27.5 23.5h11V44h-3.6v-7.5h-3.8V44h-3.6z"/>
+  <symbol id="ico-tag" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M2 2h10l10 10-10 10L2 12z"/>
+    <circle cx="7" cy="7" r="1.6"/>
   </symbol>
-  <!-- Lid, box and bow as one outline; the ribbon is a hole, not a light shape. -->
-  <symbol id="ico-gift" viewBox="0 0 48 48">
-    <path d="M23.2 10L11.5 3.6v12.8z"/>
-    <path d="M24.8 10l11.7-6.4v12.8z"/>
-    <path fill-rule="evenodd" d="M4 11h40v8h-3.5v25h-33V19H4zm17.4 4v26h5.2V15z"/>
+  <!-- Nick's "thrive": the building, not a third set of figures. -->
+  <symbol id="ico-house" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M2 22V9l10-6.5L22 9v13z"/>
+    <path d="M9 22v-7h6v7"/>
   </symbol>
-  <symbol id="ico-tag" viewBox="0 0 48 48">
-    <path fill-rule="evenodd" d="M17 6h27v36H17L3 24zm-1.2 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+  <symbol id="ico-talk" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M2 2h20v14H8l-6 5V2z"/>
+    <path d="M6 7h4M14 7h4M6 11h6"/>
   </symbol>
-  <symbol id="ico-people" viewBox="0 0 48 48">
-    <path d="M9 7.5a4.4 4.4 0 1 0 0 8.8 4.4 4.4 0 0 0 0-8.8z"/>
-    <path d="M3.4 18h11.2v26h-3.7v-9.5H7.1V44H3.4z"/>
-    <path d="M24 5.5a4.4 4.4 0 1 0 0 8.8 4.4 4.4 0 0 0 0-8.8z"/>
-    <path d="M18.4 16h11.2v28h-3.7V34.5h-3.8V44h-3.7z"/>
-    <path d="M39 7.5a4.4 4.4 0 1 0 0 8.8 4.4 4.4 0 0 0 0-8.8z"/>
-    <path d="M33.4 18h11.2v26h-3.7v-9.5h-3.8V44h-3.7z"/>
+  <symbol id="ico-message" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M2 2h20v14H8l-6 5V2z"/>
+    <path d="M6 7h12M6 11h7"/>
+  </symbol>
+  <symbol id="ico-arrow" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M3 12h15M13 6l6 6-6 6"/>
   </symbol>
 </svg>
 
 <header class="masthead">
   <div class="shell masthead-in">
     <a class="wordmark" href="#top">
-      <span class="wordmark-name">Nick Davies</span>
-      <span class="wordmark-role">Personal training · Exeter</span>
+      <!-- Logo not decided yet, and the trading name may change with it. The
+           space is held and marked, the same as every other placeholder here. -->
+      <span class="logo-slot" data-slot aria-hidden="true"></span>
+      <span class="wordmark-text">
+        <span class="wordmark-name">Nick Davies</span>
+        <span class="wordmark-role">Personal training · Exeter</span>
+      </span>
     </a>
     <nav class="nav" aria-label="Sections">
       <ul>
@@ -99,7 +123,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="shell law">
       <div class="law-index" aria-hidden="true"></div>
       <div class="law-body">
-        <h1>Personal training for dads who want to keep up, and be&nbsp;there</h1>
+        <h1>Personal training for dads who want to keep up, and be&nbsp;there<span class="stop" aria-hidden="true"></span></h1>
         <p class="lead">I'm Nick, a dad of three, and I know what it's like to look at your own kids and want to be better for them.</p>
 
         <div class="act">
@@ -113,7 +137,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <section class="sheet" id="nick" aria-labelledby="nick-h">
     <div class="shell law">
       <div class="law-index">
-        <svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#ico-family"/></svg>
+        <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-family"/></svg>
         <p class="law-label">About Nick</p>
       </div>
       <div class="law-body">
@@ -134,7 +158,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <section class="sheet alt" id="offer" aria-labelledby="offer-h">
     <div class="shell law">
       <div class="law-index">
-        <svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#ico-record"/></svg>
+        <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-list"/></svg>
         <p class="law-label">What I offer</p>
       </div>
       <div class="law-body">
@@ -143,40 +167,40 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
         <ul class="ticks" id="ticks">
           <li>
-            <svg class="tick" viewBox="0 0 32 32" aria-hidden="true">
-              <rect class="tick-box" x="2" y="2" width="28" height="28"/>
-              <path class="tick-mark" d="M8 16.5l5.5 5.5L24 11"/>
+            <svg class="tick" viewBox="0 0 24 24" aria-hidden="true">
+              <rect class="tick-box" x="1" y="1" width="22" height="22"/>
+              <path class="tick-mark" d="M6 12.5l4 4 8-8"/>
             </svg>
             <div><h3>One-to-one and one-to-two personal training sessions.</h3></div>
           </li>
           <li>
-            <svg class="tick" viewBox="0 0 32 32" aria-hidden="true">
-              <rect class="tick-box" x="2" y="2" width="28" height="28"/>
-              <path class="tick-mark" d="M8 16.5l5.5 5.5L24 11"/>
+            <svg class="tick" viewBox="0 0 24 24" aria-hidden="true">
+              <rect class="tick-box" x="1" y="1" width="22" height="22"/>
+              <path class="tick-mark" d="M6 12.5l4 4 8-8"/>
             </svg>
             <div><h3>Dads and lads groups.</h3>
             <p>One for younger kids (6–12), one for older (12–17). Let me know if this is of interest.</p></div>
           </li>
           <li>
-            <svg class="tick" viewBox="0 0 32 32" aria-hidden="true">
-              <rect class="tick-box" x="2" y="2" width="28" height="28"/>
-              <path class="tick-mark" d="M8 16.5l5.5 5.5L24 11"/>
+            <svg class="tick" viewBox="0 0 24 24" aria-hidden="true">
+              <rect class="tick-box" x="1" y="1" width="22" height="22"/>
+              <path class="tick-mark" d="M6 12.5l4 4 8-8"/>
             </svg>
             <div><h3>Dads and daughters groups.</h3>
             <p>One for younger kids (6–12), one for older (12–17). Let me know if this is of interest.</p></div>
           </li>
           <li>
-            <svg class="tick" viewBox="0 0 32 32" aria-hidden="true">
-              <rect class="tick-box" x="2" y="2" width="28" height="28"/>
-              <path class="tick-mark" d="M8 16.5l5.5 5.5L24 11"/>
+            <svg class="tick" viewBox="0 0 24 24" aria-hidden="true">
+              <rect class="tick-box" x="1" y="1" width="22" height="22"/>
+              <path class="tick-mark" d="M6 12.5l4 4 8-8"/>
             </svg>
             <div><h3>Gym confidence classes.</h3>
             <p>To build experience and knowledge in how to safely use equipment, set up a routine, and work confidently with whatever's available to you. Available from November.</p></div>
           </li>
           <li>
-            <svg class="tick" viewBox="0 0 32 32" aria-hidden="true">
-              <rect class="tick-box" x="2" y="2" width="28" height="28"/>
-              <path class="tick-mark" d="M8 16.5l5.5 5.5L24 11"/>
+            <svg class="tick" viewBox="0 0 24 24" aria-hidden="true">
+              <rect class="tick-box" x="1" y="1" width="22" height="22"/>
+              <path class="tick-mark" d="M6 12.5l4 4 8-8"/>
             </svg>
             <div><h3>Online coaching programmes.</h3>
             <p>Or standalone accountability check-ins if you're already a confident gym goer and just need someone keeping you on track, without the rest of the fuss.</p></div>
@@ -189,17 +213,23 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <section class="notice" id="christmas" aria-labelledby="christmas-h">
     <div class="shell law">
       <div class="law-index">
-        <svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#ico-gift"/></svg>
+        <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-blocks"/></svg>
         <p class="law-label">Offer</p>
       </div>
       <div class="law-body">
         <h2 id="christmas-h">Christmas present offer</h2>
         <ul class="figs">
+          <!-- The signature device, counting something real: one square per
+               session bought. Decorative here only in the sense that the count
+               is already written out beneath it, so it is hidden from the
+               reading order rather than repeated. -->
           <li>
+            <ul class="device" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li><li></li></ul>
             <p class="figs-n">£150</p>
             <p class="figs-t">6 sessions, around 30% off the standard rate.</p>
           </li>
           <li>
+            <ul class="device" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>
             <p class="figs-n">£225</p>
             <p class="figs-t">10 sessions.</p>
           </li>
@@ -214,7 +244,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <section class="sheet" id="where" aria-labelledby="where-h">
     <div class="shell law">
       <div class="law-index">
-        <svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#ico-pin"/></svg>
+        <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-pin"/></svg>
         <p class="law-label">Where</p>
       </div>
       <div class="law-body">
@@ -240,7 +270,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <section class="sheet alt" id="prices" aria-labelledby="prices-h">
     <div class="shell law">
       <div class="law-index">
-        <svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#ico-tag"/></svg>
+        <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-tag"/></svg>
         <p class="law-label">Prices</p>
       </div>
       <div class="law-body">
@@ -263,7 +293,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <section class="sheet" id="thrive" aria-labelledby="thrive-h">
     <div class="shell law">
       <div class="law-index">
-        <svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#ico-people"/></svg>
+        <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-house"/></svg>
         <p class="law-label">Thrive</p>
       </div>
       <div class="law-body">
@@ -306,7 +336,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           </li>
         </ul>
 
-        <p class="outbound"><a class="link-out" href="https://www.thrivecollectiveexeter.co.uk/">Visit Thrive Collective<svg class="link-arrow" viewBox="0 0 48 48" aria-hidden="true"><use href="#ico-arrow"/></svg></a></p>
+        <p class="outbound"><a class="link-out" href="https://www.thrivecollectiveexeter.co.uk/">Visit Thrive Collective<svg class="link-arrow" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-arrow"/></svg></a></p>
       </div>
     </div>
   </section>
@@ -314,7 +344,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <section class="sheet alt" id="words" aria-labelledby="words-h">
     <div class="shell law">
       <div class="law-index">
-        <svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#ico-talk"/></svg>
+        <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-talk"/></svg>
         <p class="law-label">Testimonials</p>
       </div>
       <div class="law-body">
@@ -362,6 +392,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <section class="notice end" id="contact" aria-labelledby="contact-h">
     <div class="shell law">
       <div class="law-index">
+        <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-message"/></svg>
         <p class="law-label">Contact</p>
       </div>
       <div class="law-body">

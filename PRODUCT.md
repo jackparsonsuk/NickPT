@@ -85,6 +85,13 @@ so the site has to read as his, not as a Thrive sub-page.
 
 ### Undecided — do not invent
 
+- **The logo, and the trading name.** As of 2026-09-02 Nick has not chosen a
+  logo and says he is "still questioning the name", so the name may move with
+  it. He asked for the space to be held throughout; the masthead carries a
+  dashed slot. Do not invent a mark, and do not fill the slot.
+- **How much of the brand is settled.** The Aug 2026 brief supplies colours,
+  type, a signature device and twelve icons, and Nick describes all of it as a
+  work in progress. Treat the palette and type as current, not final.
 - The exact awarding body and completion date of the PT qualification. As of
   2026-08-19 it is **in progress, due by Christmas 2026** — which resolves the
   earlier open question of whether it was already held.

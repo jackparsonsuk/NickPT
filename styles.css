@@ -1,16 +1,23 @@
 /* Nick Davies — personal trainer, Exeter.
    World: public-health information design. Flat overprint only.
-   No shadow and no gradient appears anywhere in this file, by contract. */
+   No shadow and no gradient appears anywhere in this file, by contract.
+
+   Palette and type are Nick's brand brief of Aug 2026: five colours, Oswald
+   for headings and labels, Inter for body. Every colour below is one of the
+   five or a tint derived from two of them — there is no sixth hue in this file. */
 
 :root {
-  --petrol: #0E4553;
-  --stock: #F6F5F1;
-  --stock-warm: #EDEBE3;
-  --ink: #14120F;
-  --ink-2: #3E5257;
-  --signal: #FFC400;   /* reserved: the action, and nothing else */
-  --sage: #4C8B7C;
-  --rule: #C9C6BB;
+  --ink: #141B22;      /* dark grounds, headings on light, the foot */
+  --steel: #2E4756;    /* body text on light grounds; seams on dark ones */
+  --paper: #ECEDE9;    /* light grounds, and all text on dark grounds */
+  --grey: #7A8C99;     /* secondary text on DARK only — 2.96:1 on paper, fails */
+  --signal: #F2B705;   /* plate yellow: the action, and the session device */
+
+  /* Two derived tints, not a sixth and seventh colour. --paper-2 is the
+     alternating sheet ground; --rule is grey let down into paper for hairlines,
+     which are non-text and would be shouty at full grey. */
+  --paper-2: #E3E4DE;
+  --rule: #B9C1C5;
 
   --unit: 8px;
   --measure: 68ch;
@@ -29,9 +36,9 @@ html {
 
 body {
   margin: 0;
-  background: var(--stock);
-  color: var(--ink);
-  font-family: "Public Sans", system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--steel);
+  font-family: "Inter", system-ui, sans-serif;
   font-size: clamp(1.0625rem, 0.98rem + 0.38vw, 1.1875rem);
   line-height: 1.6;
   font-synthesis-weight: none;
@@ -39,13 +46,13 @@ body {
 
 /* Browser surfaces themed from the palette, not left to the UA. */
 ::selection { background: var(--signal); color: var(--ink); }
-:root { accent-color: var(--petrol); caret-color: var(--petrol); }
+:root { accent-color: var(--ink); caret-color: var(--ink); }
 @supports (scrollbar-color: red blue) {
-  html { scrollbar-color: var(--petrol) var(--stock-warm); scrollbar-width: auto; }
+  html { scrollbar-color: var(--ink) var(--paper-2); scrollbar-width: auto; }
 }
 ::-webkit-scrollbar { width: 14px; height: 14px; }
-::-webkit-scrollbar-track { background: var(--stock-warm); }
-::-webkit-scrollbar-thumb { background: var(--petrol); border: 3px solid var(--stock-warm); }
+::-webkit-scrollbar-track { background: var(--paper-2); }
+::-webkit-scrollbar-thumb { background: var(--ink); border: 3px solid var(--paper-2); }
 
 :where(a):focus-visible,
 :where(button):focus-visible {
@@ -54,17 +61,36 @@ body {
 }
 .notice :where(a):focus-visible,
 .masthead :where(a):focus-visible,
-.foot :where(a):focus-visible { outline-color: #fff; }
+.foot :where(a):focus-visible { outline-color: var(--paper); }
 
+/* Oswald is condensed and has no italic, which is why the brief pairs it with
+   Inter rather than asking it to carry body copy. */
 h1, h2, h3, h4, .wordmark-name {
-  font-family: "Archivo", system-ui, sans-serif;
-  font-variation-settings: "wdth" 112;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.04;
+  font-family: "Oswald", "Arial Narrow", system-ui, sans-serif;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.005em;
+  line-height: 1.08;
   text-wrap: balance;
   margin: 0;
 }
+/* Uppercase is the brief's rule for page and section headings. It stops at the
+   section level: the h3/h4 rows below are list items and one set of them is
+   people's names, and neither wants shouting. */
+h1, h2, .sub { text-transform: uppercase; letter-spacing: 0.02em; }
+
+/* The brand's one flourish: a yellow full stop, set as a square so it belongs
+   to the session device rather than to Oswald's round period. Decorative. */
+.stop {
+  display: inline-block;
+  width: 0.22em;
+  height: 0.22em;
+  margin-left: 0.1em;
+  background: var(--signal);
+}
+
+/* Inter SemiBold is the brief's emphasis weight. */
+strong, b { font-weight: 600; }
 
 p { margin: 0 0 calc(var(--unit) * 2); }
 p:last-child { margin-bottom: 0; }
@@ -86,8 +112,8 @@ a:hover { text-decoration-thickness: 3px; }
   left: -9999px;
   top: 0;
   z-index: 20;
-  /* White, not the signal yellow: that colour is reserved for the one action. */
-  background: #fff;
+  /* Paper, not the signal yellow: that colour is punctuation, not a panel. */
+  background: var(--paper);
   color: var(--ink);
   padding: calc(var(--unit) * 1.5) calc(var(--unit) * 3);
   font-weight: 700;
@@ -100,8 +126,8 @@ a:hover { text-decoration-thickness: 3px; }
   position: sticky;
   top: 0;
   z-index: 10;
-  background: var(--petrol);
-  color: #fff;
+  background: var(--ink);
+  color: var(--paper);
 }
 .masthead-in {
   display: flex;
@@ -111,18 +137,43 @@ a:hover { text-decoration-thickness: 3px; }
   justify-content: space-between;
   padding-block: calc(var(--unit) * 1.5);
 }
-.wordmark { text-decoration: none; display: flex; flex-direction: column; }
-.wordmark-name { font-size: 1.2rem; font-weight: 800; }
-.wordmark-role {
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
+/* The logo is not decided yet, so the space for it is marked rather than
+   filled — the same dashed grammar as every other thing Nick still owes. */
+.wordmark {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--unit) * 1.5);
+}
+.logo-slot {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border: 2px dashed var(--grey);
+}
+.wordmark-text { display: flex; flex-direction: column; }
+.wordmark-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--paper);
   text-transform: uppercase;
-  color: #BFD4D6;
+  letter-spacing: 0.09em;
+}
+.wordmark-role {
+  font-family: "Oswald", "Arial Narrow", system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--grey);
 }
 .nav ul {
   display: flex;
   flex-wrap: wrap;
-  gap: calc(var(--unit) * 2.5);
+  /* Wider than the 20px this was: Oswald's condensed caps make the word space
+     inside "About Nick" nearly as wide as the gap between two items, and at
+     20px the whole bar read as one word. */
+  gap: calc(var(--unit) * 4);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -133,91 +184,110 @@ a:hover { text-decoration-thickness: 3px; }
   display: inline-flex;
   align-items: center;
   min-height: 24px;
+  font-family: "Oswald", "Arial Narrow", system-ui, sans-serif;
   font-size: 0.9375rem;
-  font-weight: 600;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   text-decoration: none;
   padding-block: 2px;
   border-bottom: 2px solid transparent;
   transition: border-color 160ms var(--ease);
 }
-.nav a:hover, .nav a[aria-current="true"] { border-bottom-color: #fff; }
+.nav a:hover, .nav a[aria-current="true"] { border-bottom-color: var(--paper); }
 
-/* ---------- the petrol notice panels ---------- */
+/* ---------- the ink notice panels ---------- */
 
 .notice {
-  background: var(--petrol);
-  color: #fff;
+  background: var(--ink);
+  color: var(--paper);
   padding-block: clamp(calc(var(--unit) * 7), 11vw, calc(var(--unit) * 15));
 }
 /* The panel carries the same index/body seam as every sheet section, so the
    page has one left edge rather than two. */
-.notice .law { border-top: 3px solid #6E9AA1; padding-top: calc(var(--unit) * 4); }
+.notice .law { border-top: 3px solid var(--grey); padding-top: calc(var(--unit) * 4); }
 .notice .law-index { border-top: none; padding-top: 0; }
-.notice .law-label { color: #BFD4D6; }
-/* Petrol ground: the mark inverts, because its default fill *is* the ground. */
-.notice .mark { fill: #fff; }
+.notice .law-label { color: var(--grey); }
+/* Ink ground: the mark inverts, because its default colour *is* the ground. */
+.notice .mark { color: var(--paper); }
+.notice :is(h1, h2, h3) { color: var(--paper); }
+/* Oswald is condensed, so the same rem step sets appreciably more per line than
+   Archivo Expanded did — the measures below are tightened to match, rather than
+   the sizes being cut. */
 .notice h1 {
-  font-size: clamp(2.35rem, 1.35rem + 4.5vw, 4.35rem);
-  font-variation-settings: "wdth" 118;
-  max-width: 22ch;
+  font-size: clamp(2.5rem, 1.4rem + 5vw, 4.75rem);
+  max-width: 17ch;
 }
 .notice h2 {
-  font-size: clamp(2.1rem, 1.3rem + 3.4vw, 3.6rem);
-  font-variation-settings: "wdth" 116;
-  max-width: 16ch;
+  font-size: clamp(2.2rem, 1.35rem + 3.6vw, 3.9rem);
+  max-width: 13ch;
 }
 .lead {
   margin-top: calc(var(--unit) * 3);
   max-width: 46ch;
   font-size: clamp(1.3125rem, 1.2rem + 0.5vw, 1.5rem);
-  color: #EDF4F4;
+  color: var(--paper);
 }
 
-/* the single yellow object on the page */
+/* The action. Plate yellow is punctuation, not a background: on this page it
+   dresses the message links, the session device and the headline stop, and
+   nothing else. Ink on #F2B705 is 9.6:1. */
 .act { margin-top: calc(var(--unit) * 6); }
 .action {
   display: inline-block;
   background: var(--signal);
   color: var(--ink);
-  font-family: "Archivo", system-ui, sans-serif;
-  font-variation-settings: "wdth" 108;
-  font-weight: 700;
+  font-family: "Oswald", "Arial Narrow", system-ui, sans-serif;
+  font-weight: 600;
   font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
-  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   text-decoration: none;
   padding: calc(var(--unit) * 2) calc(var(--unit) * 4);
   transition: transform 220ms var(--ease), background-color 220ms var(--ease);
 }
-.action:hover { background: #FFD447; transform: translateY(-2px); }
+.action:hover { background: #FFC928; transform: translateY(-2px); }
 .action:active { transform: translateY(0); }
 .act-note {
   margin-top: calc(var(--unit) * 2);
   max-width: 44ch;
   font-size: 0.9375rem;
-  color: #C3D6D8;
+  color: var(--grey);
 }
-.act-note a { color: #fff; }
+.act-note a { color: var(--paper); }
 
-/* The Christmas figures. Big and white, never yellow: the signal belongs to the
-   action underneath them, and two yellow objects would cost the page its
-   pointer. Reuses the headline-panel step rather than inventing a money size. */
+/* The Christmas figures, and the brand's signature device above each of them:
+   one square per session bought. This is the flyer's own use of the motif, and
+   the only place on the page that satisfies the brief's rule for it — the
+   filled boxes count something real. The figures stay paper, never yellow. */
 .figs {
   display: flex;
   flex-wrap: wrap;
-  gap: calc(var(--unit) * 3) calc(var(--unit) * 8);
+  gap: calc(var(--unit) * 4) calc(var(--unit) * 8);
   list-style: none;
   margin: calc(var(--unit) * 4) 0 0;
   padding: calc(var(--unit) * 3) 0 0;
-  border-top: 2px solid #33646F;
+  border-top: 2px solid var(--steel);
 }
+.device {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  list-style: none;
+  margin: 0 0 calc(var(--unit) * 2);
+  padding: 0;
+}
+/* No max-width: capped, ten squares wrapped eight-and-two, which reads as a
+   row that broke rather than as a count. Both runs sit on one line here and
+   only wrap when the panel itself does. */
+.device li { width: 15px; height: 15px; background: var(--signal); }
 .figs-n {
   margin: 0;
-  font-family: "Archivo", system-ui, sans-serif;
-  font-size: clamp(2.1rem, 1.3rem + 3.4vw, 3.6rem);
-  font-variation-settings: "wdth" 116;
-  font-weight: 800;
+  font-family: "Oswald", "Arial Narrow", system-ui, sans-serif;
+  font-size: clamp(2.2rem, 1.35rem + 3.6vw, 3.9rem);
+  font-weight: 700;
   line-height: 1.04;
-  letter-spacing: -0.02em;
+  color: var(--paper);
   /* Equal-width digits, so the captions beside them stay in a column on narrow
      screens whatever the prices become. */
   font-variant-numeric: tabular-nums;
@@ -226,7 +296,7 @@ a:hover { text-decoration-thickness: 3px; }
   margin: calc(var(--unit) * 1.5) 0 0;
   max-width: 26ch;
   font-size: 0.9375rem;
-  color: #C3D6D8;
+  color: var(--grey);
 }
 
 .details {
@@ -235,13 +305,15 @@ a:hover { text-decoration-thickness: 3px; }
   gap: calc(var(--unit) * 2) calc(var(--unit) * 6);
   margin: calc(var(--unit) * 5) 0 0;
   padding-top: calc(var(--unit) * 3);
-  border-top: 2px solid #33646F;
+  border-top: 2px solid var(--steel);
 }
 .details dt {
+  font-family: "Oswald", "Arial Narrow", system-ui, sans-serif;
   font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #A8C4C7;
+  color: var(--grey);
   margin-bottom: 2px;
 }
 .details dd { margin: 0; font-weight: 600; }
@@ -251,7 +323,7 @@ a:hover { text-decoration-thickness: 3px; }
 /* ---------- the layout law: index column + body column ---------- */
 
 .sheet { padding-block: clamp(calc(var(--unit) * 7), 9vw, calc(var(--unit) * 13)); }
-.sheet.alt { background: var(--stock-warm); }
+.sheet.alt { background: var(--paper-2); }
 
 .law {
   display: grid;
@@ -265,31 +337,42 @@ a:hover { text-decoration-thickness: 3px; }
   border-top: 3px solid var(--ink);
   padding-top: calc(var(--unit) * 2);
 }
-.mark { display: block; width: 48px; height: 48px; fill: var(--petrol); stroke: none; }
+/* Nick's icon grammar: 24-unit grid, even 2-unit stroke, square corners and
+   square ends. Only colour is set here — the mark's colour rides on `color`
+   so currentColor resolves per shape and one declaration inverts a whole mark
+   for a dark ground. The stroke width lives on the symbols themselves; set
+   here it would resolve to absolute pixels and skip the viewBox scale. */
+.mark, .link-arrow { fill: none; stroke: currentColor; }
+.mark {
+  display: block;
+  width: 48px;
+  height: 48px;
+  color: var(--ink);
+}
 .law-label {
   margin: calc(var(--unit) * 1.5) 0 0;
+  font-family: "Oswald", "Arial Narrow", system-ui, sans-serif;
   font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ink-2);
+  color: var(--steel);
 }
 .law-body h2 {
-  font-size: clamp(1.9rem, 1.25rem + 2.8vw, 3.1rem);
+  font-size: clamp(2rem, 1.3rem + 3vw, 3.4rem);
   margin-bottom: calc(var(--unit) * 3);
-  max-width: 18ch;
+  max-width: 15ch;
 }
-/* Scoped to the light sheets: on a petrol panel this rule outranked .lead
+/* Scoped to the light sheets: on a dark panel this rule outranked .lead
    and .draft.on-dark on specificity and turned both near-invisible. */
-.sheet .law-body > p { max-width: var(--measure); color: var(--ink-2); }
+.sheet .law-body > p { max-width: var(--measure); color: var(--steel); }
 .prose p { max-width: var(--measure); }
 .prose p + p { margin-top: calc(var(--unit) * 2); }
 /* Sub-headings inside a long section. They sit a full step below the section h2
    so the section still reads as one thing, not as several stacked ones. */
 .sub {
   margin: calc(var(--unit) * 6) 0 calc(var(--unit) * 2);
-  font-size: clamp(1.5rem, 1.3rem + 0.9vw, 2rem);
-  font-variation-settings: "wdth" 108;
+  font-size: clamp(1.55rem, 1.3rem + 1vw, 2.1rem);
   max-width: 24ch;
 }
 
@@ -308,17 +391,15 @@ a:hover { text-decoration-thickness: 3px; }
   border-bottom: 1px solid var(--rule);
 }
 .rows :is(h3, h4) {
-  font-size: clamp(1.3125rem, 1.22rem + 0.42vw, 1.5rem);
-  font-variation-settings: "wdth" 104;
-  font-weight: 700;
-  letter-spacing: -0.005em;
-  line-height: 1.28;
+  font-size: clamp(1.375rem, 1.26rem + 0.5vw, 1.625rem);
+  font-weight: 600;
+  line-height: 1.24;
   max-width: 34ch;
 }
 .rows p {
   margin: var(--unit) 0 0;
   max-width: 58ch;
-  color: var(--ink-2);
+  color: var(--steel);
 }
 /* A subtitle, not a label. The uppercase label register holds up over one to
    three words; "Personal trainer & founder of Cloud9 Wellness" is 45 characters
@@ -346,31 +427,31 @@ a:hover { text-decoration-thickness: 3px; }
   border-bottom: 1px solid var(--rule);
 }
 .ticks h3 {
-  font-size: clamp(1.3125rem, 1.22rem + 0.42vw, 1.5rem);
-  font-variation-settings: "wdth" 104;
-  font-weight: 700;
-  letter-spacing: -0.005em;
-  line-height: 1.28;
+  font-size: clamp(1.375rem, 1.26rem + 0.5vw, 1.625rem);
+  font-weight: 600;
+  line-height: 1.24;
 }
 .ticks p {
   margin: calc(var(--unit) * 1) 0 0;
   max-width: 58ch;
-  color: var(--ink-2);
+  color: var(--steel);
 }
+/* A tick box is the signature device drawn one square at a time, so it is built
+   to the same 24-unit grid and even 2-unit stroke as the marks. */
 .tick { width: 32px; height: 32px; margin-top: 2px; }
-.tick-box { fill: none; stroke: var(--petrol); stroke-width: 2.5; }
+.tick-box { fill: none; stroke: var(--ink); stroke-width: 2; }
 .tick-mark {
   fill: none;
-  stroke: var(--petrol);
-  stroke-width: 4;
+  stroke: var(--ink);
+  stroke-width: 2.5;
   stroke-linecap: square;
   stroke-linejoin: miter;
-  stroke-dasharray: 26;
+  stroke-dasharray: 18;
   stroke-dashoffset: 0;
 }
 /* Default is stamped. Only a browser that both runs JS and allows motion
    un-stamps them, so the static reading is never the broken one. */
-.js-motion .tick-mark { stroke-dashoffset: 26; }
+.js-motion .tick-mark { stroke-dashoffset: 18; }
 .js-motion .is-stamped .tick-mark {
   stroke-dashoffset: 0;
   /* Exponential ease-out: the stroke carries weight into its stop and settles,
@@ -383,25 +464,25 @@ a:hover { text-decoration-thickness: 3px; }
 .draft {
   margin-top: calc(var(--unit) * 4);
   padding: calc(var(--unit) * 1.5) calc(var(--unit) * 2);
-  border: 2px dashed var(--sage);
-  color: var(--ink-2);
+  border: 2px dashed var(--grey);
+  color: var(--steel);
   font-size: 0.9375rem;
   font-weight: 600;
   max-width: var(--measure);
 }
-.draft.on-dark { border-color: #7FA6AC; color: #C3D6D8; }
+.draft.on-dark { border-color: var(--grey); color: var(--grey); }
 
 .slot { margin: calc(var(--unit) * 4) 0 0; }
 .slot-art {
   aspect-ratio: 16 / 9;
-  border: 2px dashed var(--sage);
-  background: rgba(76, 139, 124, 0.10);
+  border: 2px dashed var(--grey);
+  background: rgba(122, 140, 153, 0.10);
 }
 .slot figcaption {
   margin-top: var(--unit);
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--ink-2);
+  color: var(--steel);
 }
 /* Two columns, fixed: auto-fit resolved to three in the body column and left the
    fourth slot orphaned on its own row. */
@@ -421,27 +502,28 @@ a:hover { text-decoration-thickness: 3px; }
 .quote {
   margin: 0;
   padding: calc(var(--unit) * 3);
-  border: 2px dashed var(--sage);
+  border: 2px dashed var(--grey);
 }
+/* A testimonial is body copy, so it stays Inter — and never italic, which the
+   brief rules out for body. */
 .quote p {
   margin: 0;
-  font-family: "Archivo", system-ui, sans-serif;
-  font-variation-settings: "wdth" 100;
-  font-size: clamp(1.3125rem, 1.2rem + 0.5vw, 1.5rem);
-  font-weight: 500;
-  line-height: 1.4;
+  font-size: clamp(1.25rem, 1.16rem + 0.42vw, 1.4375rem);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--ink);
   max-width: 52ch;
 }
 .quote cite {
   display: block;
   margin-top: calc(var(--unit) * 2);
-  font-family: "Public Sans", system-ui, sans-serif;
+  font-family: "Oswald", "Arial Narrow", system-ui, sans-serif;
   font-size: 0.75rem;
   font-style: normal;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ink-2);
+  color: var(--steel);
 }
 
 .outbound { margin-top: calc(var(--unit) * 4); }
@@ -449,19 +531,23 @@ a:hover { text-decoration-thickness: 3px; }
   display: inline-flex;
   align-items: center;
   gap: calc(var(--unit) * 1.25);
-  font-weight: 700;
+  font-family: "Oswald", "Arial Narrow", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 1.0625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
   text-decoration: none;
-  color: var(--petrol);
-  border-bottom: 3px solid var(--petrol);
+  color: var(--ink);
+  border-bottom: 3px solid var(--ink);
   padding-bottom: 2px;
   transition: background-color 180ms var(--ease);
 }
-.link-out:hover { background: var(--stock-warm); }
-.sheet.alt .link-out:hover { background: var(--stock); }
+.link-out:hover { background: var(--paper-2); }
+.sheet.alt .link-out:hover { background: var(--paper); }
 .link-arrow {
   width: 24px;
   height: 24px;
-  fill: var(--petrol);
+  color: var(--ink);
   transition: transform 220ms var(--ease);
 }
 .link-out:hover .link-arrow { transform: translateX(4px); }
@@ -470,7 +556,7 @@ a:hover { text-decoration-thickness: 3px; }
 
 .foot {
   background: var(--ink);
-  color: #C8C6C0;
+  color: var(--paper);
   padding-block: calc(var(--unit) * 5);
   font-size: 0.9375rem;
 }
@@ -481,15 +567,15 @@ a:hover { text-decoration-thickness: 3px; }
   justify-content: space-between;
 }
 .foot p { margin: 0; }
-.foot a { color: #fff; }
+.foot a { color: var(--paper); }
 /* The credit is somebody else's line on Nick's page, so it sits on its own row
-   below his, dimmer and smaller. #8C8A85 on --ink is 5.4:1 — still AA at this
-   size — and the address itself stays white, which is where the click goes. */
+   below his, dimmer and smaller. Grey on ink is 5.0:1 — still AA at this size
+   — and the address itself stays paper, which is where the click goes. */
 .foot p.foot-credit {
   flex-basis: 100%;
   margin-block-start: calc(var(--unit) * 2);
   font-size: 0.875rem;
-  color: #8C8A85;
+  color: var(--grey);
 }
 
 /* ---------- touch ----------
@@ -537,6 +623,7 @@ a:hover { text-decoration-thickness: 3px; }
   .masthead-in { display: block; padding-block: 0; }
   .wordmark { padding-block: calc(var(--unit) * 1.25); }
   .wordmark-name { font-size: 1.0625rem; }
+  .logo-slot { width: 28px; height: 28px; }
 
   .nav { margin-inline: calc(var(--unit) * -3); }
   .nav ul {
@@ -547,7 +634,7 @@ a:hover { text-decoration-thickness: 3px; }
     overflow-y: hidden;
     overscroll-behavior-x: contain;
     padding-inline: calc(var(--unit) * 3);
-    border-top: 1px solid #33646F;
+    border-top: 1px solid var(--steel);
     /* No fade or shadow marks the overflow edge — the contract bans gradients,
        so the affordance is the cut item itself. */
     scrollbar-width: none;
@@ -571,12 +658,13 @@ a:hover { text-decoration-thickness: 3px; }
   .act { margin-top: calc(var(--unit) * 4); }
   /* The seam rule marks the index/body seam, and at this width there is no index
      column to mark — on the hero it just read as a second underline below the
-     sticky bar. The petrol-to-stock ground change already separates the panels. */
+     sticky bar. The ink-to-paper ground change already separates the panels. */
   .notice .law { border-top: none; padding-top: 0; }
 
   .action { display: block; text-align: center; padding-inline: calc(var(--unit) * 2); }
   .ticks li { grid-template-columns: 24px minmax(0, 1fr); gap: calc(var(--unit) * 2); }
   .tick { width: 24px; height: 24px; }
+  .device li { width: 13px; height: 13px; }
   .slots { grid-template-columns: 1fr; }
 
   /* Figure and caption share a line: it reads as a price list and saves a
@@ -588,6 +676,9 @@ a:hover { text-decoration-thickness: 3px; }
     gap: 0 calc(var(--unit) * 2);
     align-items: baseline;
   }
+  /* The device spans both columns so the price and its caption still share a
+     line underneath it. */
+  .figs .device { grid-column: 1 / -1; margin-bottom: var(--unit); }
   .figs-t { margin-top: 0; max-width: none; }
 
   /* The contact list is the whole point of the page on a phone. Every row a
