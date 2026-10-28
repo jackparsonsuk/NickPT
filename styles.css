@@ -145,11 +145,23 @@ a:hover { text-decoration-thickness: 3px; }
   align-items: center;
   gap: calc(var(--unit) * 1.5);
 }
-.logo-slot {
+/* PROVISIONAL stand-in for a logo Nick has not chosen. Set in Oswald at the
+   documented label step rather than drawn, so it inherits the type system and
+   ships no asset. Paper on the ink masthead — never --signal, which is spoken
+   for. text-indent cancels the trailing letter-space so NPT sits centred. */
+.logo-mark {
   flex: 0 0 auto;
+  display: grid;
+  place-items: center;
   width: 34px;
   height: 34px;
-  border: 2px dashed var(--grey);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Oswald", "Arial Narrow", system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-indent: 0.08em;
 }
 .wordmark-text { display: flex; flex-direction: column; }
 .wordmark-name {
@@ -478,12 +490,20 @@ a:hover { text-decoration-thickness: 3px; }
   border: 2px dashed var(--grey);
   background: rgba(122, 140, 153, 0.10);
 }
-.slot figcaption {
+.slot figcaption,
+.shot figcaption {
   margin-top: var(--unit);
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--steel);
 }
+/* A supplied photograph. No frame, no shadow: the images are duotoned to the
+   ink/paper ramp before they ship, so a photo is flat overprinted colour like
+   everything else and carries none of Thrive's orange onto the page. */
+.shot { margin: calc(var(--unit) * 4) 0 0; }
+.shot img,
+.slots img { display: block; width: 100%; height: auto; }
+.shot-portrait { max-width: 26rem; }
 /* Two columns, fixed: auto-fit resolved to three in the body column and left the
    fourth slot orphaned on its own row. */
 .slots {
@@ -492,15 +512,24 @@ a:hover { text-decoration-thickness: 3px; }
   gap: calc(var(--unit) * 3);
   margin-top: calc(var(--unit) * 3);
 }
-.slots .slot { margin: 0; }
+.slots .slot,
+.slots .shot { margin: 0; }
 
 .quotes {
   display: grid;
   gap: calc(var(--unit) * 3);
   margin-top: calc(var(--unit) * 4);
 }
+/* A real quote is a hairline-ruled row, the device .rows already uses — the page
+   has no cards and no accent edges, and a quote should not invent either. The
+   dashed grey box stays reserved for [data-draft], so a placeholder and
+   published copy never look alike. */
 .quote {
   margin: 0;
+  padding: calc(var(--unit) * 3) 0 0;
+  border-top: 1px solid var(--rule);
+}
+.quote[data-draft] {
   padding: calc(var(--unit) * 3);
   border: 2px dashed var(--grey);
 }

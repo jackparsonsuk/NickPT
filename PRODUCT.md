@@ -116,7 +116,7 @@ so the site has to read as his, not as a Thrive sub-page.
   Devon, so do not extend it into the "Where I train" section, which must stay
   literally true.
 - Affiliation with Thrive Collective is real and must be visible and linked.
-- Existing channels: Instagram @wheres_nick_gone, WhatsApp 07812055812, email
+- Existing channels: Instagram @nick_pt_exeter, WhatsApp 07812055812, email
   nickptexeter@gmail.com. Bookings run through thrivecollectiveexeter.co.uk.
 - Voice: honest, warm, low-pressure, plain-spoken. Thrive's own register is
   "no pressure, no sales pitch — just a conversation." Nick's site should sit

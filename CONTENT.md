@@ -39,45 +39,112 @@ public Thrive bio and adds credibility, but the new copy does not mention it.
 
 ---
 
-## 3. Testimonials — BLOCKER
+## 3. Testimonials — BLOCKER CLEARED 28 Oct 2026
 
-`#words` holds three dashed placeholder blocks and a line saying there is nothing
-real yet. **The site must not launch with these visible.** Two options:
+Nick shared a Drive folder on **28 Oct 2026** containing a `Testimonials` doc with
+two real quotes. Both are now on the page and the three dashed placeholders are
+gone, so the section can go live. `.quote` is solid with an ink left edge;
+`.quote[data-draft]` keeps the dashed grey, so a placeholder can never again be
+mistaken for published copy.
 
-- Send two or three real quotes with a first name and, ideally, a town. Two or
-  three sentences each. The most useful one is from a dad who was nervous before
-  his first session, because that is exactly who the page is written for; a
-  second useful one is from a dads-and-lads or dads-and-daughters group.
-- Or delete the whole section, plus its `Testimonials` nav link, until quotes
-  exist. An honestly absent section beats a padded one.
+What went up, and what was done to it:
+
+- **Stuart, client — October 2026.** Supplied as ~350 words with a five-star row.
+  Shortened to three consecutive sentences; **no wording was changed**. Two
+  paragraphs were deliberately left out: one crediting **nutrition tracking**,
+  which is not a service the page offers and would start advertising one, and the
+  closing recommendation.
+- **Pete, Performance Training Academy — October 2026.** Verbatim, minus a stray
+  closing quote mark and two emoji.
+
+Three things still worth knowing:
+
+- **Pete is an industry peer, not a client**, and his line is future tense —
+  *"you are going to do great in the industry"*. On a page selling sessions now
+  that can read as "not established yet". The cite names his academy so the
+  reader can tell what kind of endorsement it is. Nick's call whether to keep it.
+- **Neither quote is from a dad, and neither mentions children.** The page is
+  positioned for dads; its testimonials are not. Stuart already trains with Nick
+  and clearly rates him — if he is a dad, one line from him about keeping up with
+  his kids would be worth more than anything else outstanding. It has to come
+  from him, not from us.
+- **Neither has a town**, so neither cite claims one.
+
+**Instagram handle — SETTLED 28 Oct 2026.** Stuart's testimonial named Nick as
+`@nick_pt_exeter`, which conflicted with the `@wheres_nick_gone` the page carried.
+Confirmed: **`@nick_pt_exeter` is a new account for the PT work.** The page now
+uses it in both places (contact list and footer) and `@wheres_nick_gone` no longer
+appears anywhere on the site. The old handle may still be live as Nick's personal
+account; it is simply no longer the one the site points at.
 
 ---
 
-## 4. Photographs
+## 4. Photographs — three live, two sets still missing
 
-Five marked image slots, all empty.
+Nick's Drive folder of **28 Oct 2026** ("Nick PT Exeter photos") holds roughly 32
+stills and 45 video clips. **Seven stills are now on the page** — one portrait in
+About and a six-image gallery in a 2 × 3 grid. The two original slots nothing
+answered have been **deleted rather than left dashed**, per the rule below.
 
-**One portrait**, in the About section:
+| File | Caption | Note |
+|---|---|---|
+| `img/nick-portrait.webp` | *About section* | Nick in a Thrive top, checking his watch |
+| `img/training.webp` | Nick training | On TRX straps. **Not shot at Thrive** |
+| `img/facility.webp` | Thrive Collective facility | The empty gym floor |
+| `img/between-sets.webp` | Nick, between sets | Seated on a bench, towel round his neck |
+| `img/rack.webp` | Rack and bench | Half rack, loaded bar |
+| `img/dumbbells.webp` | Dumbbells | Detail |
+| `img/plates.webp` | Plates | Detail |
 
-- Landscape, at least 1600px wide. JPG or WebP.
-- What works: Nick mid-conversation, or in the Thrive space, or with his kids —
-  looking like a person you would talk to. What does not: arms folded, gym-advert
-  poses. The whole design argues against that, and one stock-looking photo would
-  undo it.
+Two of the six gallery images show Nick; one shows the room; three are equipment
+details. That balance is what the folder supports, not a preference.
 
-**Four gallery sets**, in the Testimonials section, as Nick listed them:
+**The page no longer says what is missing.** A line reading *"Two of the four sets
+exist so far. Group sessions and progress photographs are not here yet"* was on
+the page and was **removed on 28 Oct 2026 at the user's request**. Nothing on the
+page now flags the gaps below — this file is the only record of them.
 
-- Training sessions
-- Dads and lads / dads and daughters groups
-- Progress and transformation shots
-- Thrive Collective facility
+### Everything is duotoned, and that is a design decision
 
-For each, swap the `<div class="slot-art">` for a real `<img>` with `width`,
-`height` and `alt`. Progress and transformation shots need the client's explicit
-permission on record, and the same goes for any photograph a child appears in.
+Every usable photograph of the real space is dominated by **Thrive's orange** —
+the hex logo, the Mirafit racks, the branded kit. Dropping three of those in full
+colour would have imported Thrive's identity onto a page whose brand rule is to
+stay *deliberately unlike* it. So each image is mapped to the page's own
+`--ink`→`--paper` ramp at export time and baked in, not filtered in CSS. That
+also satisfies the no-gradients, flat-overprinted-colour rule. Originals are
+untouched in Drive; `scratchpad/prep.py` is the script. **Reversible**: re-export
+without the duotone step if Nick prefers colour.
 
-No photos at all is a workable option — the page is designed to work without
-them, and it does. Delete the slots rather than leave them dashed.
+### What could not be used
+
+- **`photo one - pt training.jpg`** — two members of the public clearly
+  identifiable in the background, and not shot at Thrive. No consent on record.
+- **`photo two - pt training.jpg`** — a commercial chain gym, white walls and
+  tiled floor, with two more identifiable people in the mirror. Contradicts the
+  page's claim that Nick trains at Thrive.
+- **`photo three`** (the one used) is Nick alone, but also **not at Thrive**,
+  which is why it is captioned "Nick training" rather than "Training sessions".
+- **There is still no photograph of Nick training an actual client.** Every shot
+  supplied is Nick alone or an empty room. The "Training sessions" category is
+  therefore not genuinely filled, and the caption does not pretend otherwise.
+
+### Still outstanding
+
+- A photograph of a real session, with the client's written permission.
+- Dads-and-lads / dads-and-daughters group shots. **Any photograph a child
+  appears in needs explicit parental permission on record.**
+- Progress and transformation shots, which need the client's explicit permission
+  and were ruled out as a positioning anyway (see `CLAUDE.md`).
+
+Two housekeeping notes:
+
+- The Thrive stills carried **GPS coordinates in their EXIF**. All EXIF is
+  stripped on export; do not ship a photo from this folder without stripping it.
+- The Drive folder is currently shared as **"anyone with the link"** — it opens
+  with no Google sign-in. Harmless for gym equipment, but worth Nick knowing.
+
+No photos at all remains a workable option — the page was designed to work
+without them. Delete slots rather than leave them dashed.
 
 ---
 
@@ -88,7 +155,7 @@ All live and correct as of 19 Aug 2026:
 - WhatsApp `07812 055812`, linked as `https://wa.me/447812055812`
 - Email `nickptexeter@gmail.com` — **his own address; the previous blocker
   (the shared `thrivecollectiveexeter@gmail.com` inbox) is resolved**
-- Instagram `@wheres_nick_gone`
+- Instagram `@nick_pt_exeter` — his PT account, confirmed 28 Oct 2026 (§3)
 - Bookings via `thrivecollectiveexeter.co.uk`
 
 ---
@@ -187,6 +254,17 @@ yellow; that colour belongs to the two `.action` links alone.
 
 ## 9. Before launch
 
+- **Replace the stand-in monogram.** The dashed `.logo-slot` was replaced on
+  **28 Oct 2026** by `.logo-mark`: a 34×34 paper square carrying **NPT** in ink,
+  set in Oswald at the documented label step (`0.75rem`, weight 500, `0.08em`
+  tracking) rather than drawn, so it ships no asset and deletes in one line. It
+  is `aria-hidden` because the wordmark beside it already says the name, and it
+  carries `data-draft` to mark it provisional in the markup.
+  **It is a holding device, not a logo.** Nick has still not chosen a real mark,
+  and the trading name may change with it (see `## Brand` in `CLAUDE.md`). It is
+  deliberately plain so that it reads as typography rather than as an identity —
+  if it starts looking like a logo people have got used to, that is a problem,
+  not a success. The wordmark also stands perfectly well with no mark at all.
 - Point the site at its real domain.
 - Add a real favicon.
 - Add an OG share image, 1200x630, and `og:url`. The whole site converts through

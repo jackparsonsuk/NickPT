@@ -1,3 +1,15 @@
 {
-  "buildPath": "code"
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-10-28T10:05:14.564Z",
+        "reason": "Inter is mandated for body copy by Nick's own brand brief of Aug 2026 (website-brand-brief.docx); recorded as binding under ## Brand in CLAUDE.md. Not a free choice."
+      }
+    ]
+  }
 }
